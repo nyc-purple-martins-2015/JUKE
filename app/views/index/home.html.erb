@@ -6,6 +6,14 @@
     <%= button_to "join JUKE", invite_code_path, method: :get, class: "button" %>
 </div>
 
+<div class="join_juke_form">
+  <%= form_tag join_path do %>
+  <%= label_tag :invite_code %>
+  <%= text_field_tag :invite_code, nil, placeholder: "ex: frogs1435" %>
+  <%= submit_tag "join JUKE", class: "button" %>
+  <% end %>
+</div>
+
 <div class="my_jukes_button">
-    <%= button_to "my JUKES", user_path(@user), method: :get, class: "button" %>
+    <%= button_to "my JUKES", "#", method: :get, class: "button" %>
 </div>
