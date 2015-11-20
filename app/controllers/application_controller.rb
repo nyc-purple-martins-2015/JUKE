@@ -12,6 +12,16 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+
+  def spotify_post(endpoint_url, hash_of_params)
+    uri = URI(endpoint_url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri)
+    request.set_form_data(hash_of_params)
+    response = http.request(request)
+    # do something with response
+  end
+
   def spotify_get(endpoint_url)
     uri = URI(endpoint_url)
     req = Net::HTTP::Get.new(uri)
