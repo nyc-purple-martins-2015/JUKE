@@ -1,7 +1,7 @@
 class IndexController < ApplicationController
 
   def home
-    @user =
+    @user = current_user
   end
 
 end
