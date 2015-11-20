@@ -16,6 +16,8 @@
 
 $(document).ready(function() {
 
+
+// JQuery the invite code input form:
   $(".join_juke_button").on("submit", function(event){
     event.preventDefault()
     $( ".join_juke_form" ).toggle();

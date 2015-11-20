@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.join_juke_form {
-  display: none;
-}
-
