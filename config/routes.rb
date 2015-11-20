@@ -6,8 +6,19 @@ Rails.application.routes.draw do
   resources :jukes
   get 'invite_code' => 'jukes#invite_code'
   get 'join' => 'jukes#join'
-  resources :users
-  resources :sessions, only: [:create, :destroy]
+  resources :users do
+    resources :playlists, only: [:index, :show, :create] do
+      resources :tracks, only: [:show, :post, :put]
+    end
+  end
+
+  get "login" => "sessions#new", as: :login
+  post "sessions" => "sessions#create"
+  delete "logout" => "sessions#destroy", as: :logout
+
+  post 'auth/:provider/callback' => 'sessions#create', as: :ouath_callback
+  get 'auth/:provider' => 'sessions#new', as: :ouath_login
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
