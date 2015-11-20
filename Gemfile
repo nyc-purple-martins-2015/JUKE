@@ -30,7 +30,7 @@ group :development, :test do
   # gem 'pry-rails'
   gem 'rspec-rails'
   gem 'faker'
-  gem 'shoulda-matchers'
+  # gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
