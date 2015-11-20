@@ -3,6 +3,8 @@ class PlaylistsController < ApplicationController
 
   def index
     res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
-    render json:res.body
+    h = JSON.parse(res.body)
+    ap h
+    render text: h.inspect
   end
 end

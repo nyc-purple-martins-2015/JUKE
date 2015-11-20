@@ -35,8 +35,8 @@ class SessionsController < ApplicationController
       u.password = SecureRandom.uuid
     end
     u.email = auth_hash[:info][:email]
-    u.name  = auth_hash[:info][:name]
-    u.image = auth_hash[:info][:image]
+    u.username  = auth_hash[:info][:name]
+   # u.image = auth_hash[:info][:image]
     u.save if u.changed?
 
     session[:user_id] = u.id
