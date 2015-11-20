@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+.header {
+  border: 1px solid black;
+  height: 5em;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:10em;   /* Height of the footer */
+   /*background-color: black;*/
+   background:#6cf;
+}
+
+
+.logo {
+  text-align: center;
+}

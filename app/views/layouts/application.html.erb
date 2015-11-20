@@ -3,12 +3,23 @@
 <head>
   <title>JUKE</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="header_container">
+  <div class="header">
+    <h1 class="logo">Juke</h1>
+  </div>
+</div>
 <%= yield %>
+
+<div id="footer_container">
+  <div class = "footer">
+
+  </div>
+</div>
 
 </body>
 </html>
