@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'index#home'
 
   resources :jukes
+  get 'invite_code' => 'jukes#invite_code'
   resources :users
   resources :sessions, only: [:create, :destroy]
   # You can have the root of your site routed with "root"
