@@ -3,5 +3,5 @@ class SetlistSong < ActiveRecord::Base
   belongs_to :setlist
   has_many :votes
 
-  validates_presence_of :song, :setlist
+  validates_presence_of :song, :setlist, :list_status
 end
