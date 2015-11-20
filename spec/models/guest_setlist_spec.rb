@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe GuestSetlist, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validations" do
+    it { should validate_presence_of :guest}
+    it { should validate_presence_of :setlist}
+  end
 end
