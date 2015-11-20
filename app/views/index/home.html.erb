@@ -8,9 +8,9 @@
 
 <div class="join_juke_form">
   <%= form_tag join_path do %>
-  <div><%= label_tag :invite_code %></div>
-  <div><%= text_field_tag :invite_code, nil, placeholder: "ex: frogs1435" %></div>
-  <div><%= submit_tag "join JUKE", class: "button" %></div>
+  <%= label_tag :invite_code %>
+  <%= text_field_tag :invite_code, nil, placeholder: "ex: frogs1435" %>
+  <%= submit_tag "join JUKE", class: "button" %>
   <% end %>
 </div>
 

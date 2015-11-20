@@ -15,5 +15,6 @@
  */
 
 .join_juke_form {
-  visibility: hidden;
+  display: none;
 }
+
