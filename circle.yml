@@ -1,0 +1,7 @@
+machine:
+  ruby:
+    version:
+      2.2.0
+dependencies:
+  override:
+    - 'bundle check --path=vendor/bundle || bundle install --local --path=vendor/bundle --jobs=4 --retry=3'
