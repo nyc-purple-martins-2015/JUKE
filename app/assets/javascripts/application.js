@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function() {
+
+  $(".join_juke_button").on("submit", function(event){
+    event.preventdefault();
+
+  $( ".join_juke_button" ).click(function() {
+  $( ".join_juke_form" ).toggle();
+    // Animation complete.
+  });
+  });
+
+});
