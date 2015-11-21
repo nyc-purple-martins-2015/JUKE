@@ -1,0 +1,13 @@
+.login_page{
+  position: relative;
+  top: 18em;
+  text-align: center;
+}
+
+.guest_login {
+  display: none;
+}
+
+.guest_register {
+  display: none;
+}
