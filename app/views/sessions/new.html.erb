@@ -1,13 +1,12 @@
-<h1>welcome to JUKE!</h1>
+<section class="login_page">
 
-<%= form_for @user, url: sessions_path do |f| %>
+<h2 class="guest_login"><%=render partial: "login_form"%></h2>
 
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit "Log In" %>
+<a href="/auth/spotify">Login with your Spotify account</a>
+<h3>Import and crowdsource your playlists!</h3>
 
-<% end %>
+<h4>Not a Spotify member? Login or sign up as a party guest!</h4>
+<a href="/login">Login<a>
+<a href="/users/new">Sign Up<a>
 
-Or <a href="/auth/spotify">Login with Spotify</a>
+</section>
