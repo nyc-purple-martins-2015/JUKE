@@ -35,14 +35,13 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     u = User.find_by(uid: auth_hash[:uid])
     if !u
-      u=User.new(uid: auth_hash[:provider], provider: auth_hash[:provider])
+      u=User.new(uid: auth_hash[:uid], provider: auth_hash[:provider])
       u.password = SecureRandom.uuid
       u.email = auth_hash[:info][:email]
       u.username = auth_hash[:info][:name]
       u.save!
     end
 
-    binding.pry
     session[:user_id] = u.id
     session[:token] = auth_hash[:credentials][:token]
     redirect_to root_path
