@@ -11,5 +11,5 @@
     <%= f.submit "Down Vote", class: "button"  %>
   <% end %>
 
- <p>Vote value: <%= SetlistSong.find(setlist_song_id).votes.sum(:value) %> </p>
+ <p>Vote value: <%= SetlistSong.find(setlist_song_id).vote_count %> </p>
 </div>
