@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
       artist_list = []
       t["track"]["artists"].each { |artist| artist_list << artist["name"] }
       {
-        name: t["track"]["name"],
+        title: t["track"]["name"],
         song_spotify_url: t["track"]["href"],
         album: t["track"]["album"]["name"],
         artist: artist_list.join(", ")
