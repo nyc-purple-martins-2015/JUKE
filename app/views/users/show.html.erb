@@ -1,19 +1,19 @@
 <div class="showpage_users_container">
-  <% if @user.viewable_lists %>
+  <div class="my_jukes">
     <h3>My Jukes</h3>
-    <% @user.viewable_lists.each do |item| %>
-      <ul>
-        <li><%= item.name %></li>
-      </ul>
-    <% end %>
-  <% end %>
+    <ol>
+      <% @user.setlists.each do |setlist| %>
+        <li><%= setlist.name %></li>
+      <% end %>
+    </ol>
+  </div>
 
-  <% if @user.setlists %>
+  <div class="my_friends_jukes">
     <h3>My Friends Jukes</h3>
-    <% @user.setlists.each do |item| %>
-      <ul>
-        <li><%= item.name %></li>
-      </ul>
-    <% end %>
-  <% end %>
+    <ol>
+      <% @user.viewable_lists.each do |setlist| %>
+        <li><%= setlist.name %></li>
+      <% end %>
+    </ol>
+  </div>
 </div>

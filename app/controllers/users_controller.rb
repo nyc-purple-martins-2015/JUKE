@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.includes(:guest_setlists, :setlists, :viewable_lists).find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def create
