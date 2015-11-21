@@ -12,6 +12,9 @@ setlist/:id/edit
     </div>
   <% end %>
   </ol>
+  <%# change the above to the render partial (commented out below) when the /juke/new is complete.  This will reduce the number of requests we are making to spotify and simplify the above code %>
+
+  <%# render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
 </div>
 
 <div class="suggested_songs_container">
