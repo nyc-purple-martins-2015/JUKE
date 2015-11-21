@@ -11,4 +11,5 @@ $(document).ready(function() {
      $(".guest_register").toggle();
      $(".guest_login").css("display", "none");
   });
+
 });
