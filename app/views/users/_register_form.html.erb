@@ -1,10 +1,11 @@
-
-<%= form_for @user, url: sessions_path do |f| %>
+<%= form_for @user, url: users_path do |f| %>
 
     <%= f.label :username %>
     <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.submit "Log In" %>
+    <%= f.submit "Sign up" %>
 
 <% end %>
