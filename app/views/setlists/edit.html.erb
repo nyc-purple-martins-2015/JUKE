@@ -15,15 +15,5 @@ setlist/:id/edit
 </div>
 
 <div class="suggested_songs_container">
-  <ol>
-    <h3>Suggested Tracks</h3>
-    <% @setlist_songs.each do |setlist_song| %>
-      <% song = setlist_song.song %>
-      <li class="song"><%= song.title %></li>
-      <h7 class="song_details">
-        <span class="artist_name"><%= song.artist %></span> |
-        <span class="album_name"><%= song.album %></span>
-      </h7>
-    <% end %>
-  </ol>
+  <%= render partial: "show_partial", locals: {list_title: "Suggestions"} %>
 </div>

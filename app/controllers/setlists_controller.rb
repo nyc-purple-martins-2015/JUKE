@@ -10,7 +10,8 @@ class SetlistsController < ApplicationController
     @tracks = get_setlist_tracks(@setlist)
   end
 
-
-
-
+  def show
+    @setlist = Setlist.find(params[:id])
+    @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
+  end
 end
