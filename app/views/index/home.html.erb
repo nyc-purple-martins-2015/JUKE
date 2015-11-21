@@ -1,13 +1,19 @@
 <div class="new_juke_button">
-    <%= button_to "new JUKE", new_setlist_path, method: :get, class: "button" %>
+  <%= button_to "new JUKE", new_setlist_path, method: :get, class: "button" %>
 </div>
 
 <div class="join_juke_button">
-    <%= button_to "join JUKE", invite_code_path, method: :get, class: "button" %>
+  <%= button_to "join JUKE", invite_code_path, method: :get, class: "button" %>
+</div>
+
+<div class="join_errors">
+  <% if flash[:alert] %>
+  <%= flash[:alert] %>
+  <% end %>
 </div>
 
 <div class="join_juke_form">
-  <%= form_tag join_path do %>
+  <%= form_tag join_path, method: :get do %>
   <%= label_tag :invite_code %>
   <%= text_field_tag :invite_code, nil, placeholder: "ex: frogs1435" %>
   <%= submit_tag "join JUKE", class: "button" %>
