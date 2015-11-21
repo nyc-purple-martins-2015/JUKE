@@ -1,0 +1,14 @@
+<div class="spotify_playlists_container">
+
+  <h3> HERE GOES THE USERS SPOTIFY PLAYLISTS </h3>
+
+</div>
+
+
+
+<div class="new_setlist_form_container">
+  <%= form_for @setlist do |f| %>
+    <%= f.label :name, "Setlist Name:" %>
+    <%= f.text_field :name %>
+  <% end %>
+</div>

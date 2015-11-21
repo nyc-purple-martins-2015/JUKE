@@ -1,4 +1,4 @@
-class JukesController < ApplicationController
+class SetlistsController < ApplicationController
 
   def new
     @setlist = Setlist.new
