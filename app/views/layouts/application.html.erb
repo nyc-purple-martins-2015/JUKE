@@ -10,7 +10,12 @@
 <body>
 <div id="header_container">
   <div class="header">
-    <h1 class="logo">Juke</h1>
+    <a class="logo">Juke</a>
+    <% if logged_in? %>
+      <a class="login_and_logout" href="<%= logout_path %>">logout</a>
+    <% else %>
+      <a class="login_and_logout" href="<%= login_path %>">login</a>
+    <% end %>
   </div>
 </div>
 <%= yield %>
