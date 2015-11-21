@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'join' => 'setlists#join'
   resources :playlists, only: [:index, :show, :create]
   resources :users
+  resources :votes
 
 
   get "login" => "sessions#new", as: :login

@@ -1,0 +1,11 @@
+<div class="vote-buttons">
+  <%= form_for Vote.new do |f| %>
+    <%= f.hidden_field :value, :value => 1 %>
+    <%= f.submit "Up Vote", class: "button"  %>
+  <% end %>
+
+  <%= form_for Vote.new do |f| %>
+    <%= f.hidden_field :value, :value => -1 %>
+    <%= f.submit "Down Vote", class: "button"  %>
+  <% end %>
+</div>
