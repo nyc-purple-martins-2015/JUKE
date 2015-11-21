@@ -1,4 +1,9 @@
 <div class="showpage_users_container">
-  <h1>My Jukes</h1>
-  <h1>My Friends Jukes</h1>
+  <h3>My Jukes</h3>
+    <% if @user.viewable_lists %>
+      there are viewable lists
+    <% else %>
+      no viewable lists
+    <% end %>
+  <h3>My Friends Jukes</h3>
 </div>
