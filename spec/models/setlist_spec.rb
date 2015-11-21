@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Setlist, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validations" do
+    it { should validate_presence_of :host}
+    it { should validate_presence_of :name}
+    it { should validate_presence_of :list_spotify_url}
+    it { should validate_presence_of :invite_code}
+  end
 end

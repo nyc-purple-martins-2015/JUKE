@@ -9,6 +9,7 @@ require 'rspec/rails'
 
 require 'capybara/rails'
 require 'simplecov'
+require 'database_cleaner'
 # Add additional requires below this line. Rails is not loaded until this point!
 # save to CircleCI's artifacts directory if we're on CircleCI
 if ENV['CIRCLE_ARTIFACTS']
