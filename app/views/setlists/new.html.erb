@@ -1,0 +1,18 @@
+new setlist page
+<h3>My Spotify Playlists</h3>
+<div class="spotify_playlists_container">
+  <ol>
+    <% @playlists.each do |playlist| %>
+    <div class="spotify_playlist_container">
+      <%= form_for(@setlist) do |f| %>
+        <%= f.hidden_field :name, value: playlist[:name] %>
+        <%= f.hidden_field :list_spotify_url, value: playlist[:url] %>
+        <%= f.hidden_field :invite_code, value: SecureRandom.uuid.slice(0,5) %>
+        <li> <%= f.submit playlist[:name]%> </li>
+      <% end %>
+    </div>
+    <% end %>
+  </ol>
+</div>
+
+

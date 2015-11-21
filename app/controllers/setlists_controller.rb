@@ -4,6 +4,17 @@ class SetlistsController < ApplicationController
 
   end
 
+  def new
+    ensure_current_user
+    @setlist = Setlist.new
+    res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
+    parsed = JSON.parse(res.body)
+    @playlists = []
+    parsed["items"].each do |playlist|
+      @playlists << {name: playlist["name"], url: playlist["href"]}
+    end
+  end
+
   def edit
     @setlist = Setlist.find(params[:id])
     @setlist_songs = @setlist.setlist_songs.where(list_status: 0)
@@ -27,9 +38,10 @@ class SetlistsController < ApplicationController
         tracks_not_loaded << setlist_song.title unless setlist_song.save
       end
       flash[:alert] = "The following songs were not loaded \n \n #{tracks_not_loaded.join(", ")}."
-      redirect_to edit_setlist
+      redirect_to edit_setlist_path(setlist)
     else
-      # error case
+      flash[:alert] = "I'm sorry but we were unable to use that setlist"
+      redirect_to new_setlist_path
     end
   end
 
@@ -47,7 +59,7 @@ class SetlistsController < ApplicationController
 # we need a validation of some kind on the url...all setlists
 # should be forced to have a valid list_spotify_url that attaches to spotify
   def setlist_params
-    params.require(:setlist).permit(:name, :list_spotify_url, :invite_code, host: current_user)
+    params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
   end
 
 end
