@@ -2,8 +2,20 @@
   display: none;
 }
 
-.song_container {
+.songs_container, .suggested_songs_container {
+  width: 40em;
+  margin-left: 2em;
+  /*display: inline-block;*/
+}
+
+.songs_container {
   margin-top: 1em;
+}
+
+.suggested_songs_container {
+  border: 1px solid black;
+  margin-left: 60em;
+  margin-top: -168em;
 }
 
 .song_details {
