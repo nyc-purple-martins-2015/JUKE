@@ -39,10 +39,10 @@ class SessionsController < ApplicationController
       u.password = SecureRandom.uuid
       u.email = auth_hash[:info][:email]
       u.username = auth_hash[:info][:name]
+      binding.pry
       u.save!
     end
 
-    binding.pry
     session[:user_id] = u.id
     session[:token] = auth_hash[:credentials][:token]
     redirect_to root_path
