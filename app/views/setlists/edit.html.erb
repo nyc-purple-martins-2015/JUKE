@@ -1,0 +1,9 @@
+setlist/:id/edit
+<div class="current_list_container">
+  <ol>
+    <h3>Current Playlist</h3>
+  <% @tracks.each do |track_name| %>
+    <li class="song"><%= track_name %></li>
+  <% end %>
+  </ol>
+</div>
