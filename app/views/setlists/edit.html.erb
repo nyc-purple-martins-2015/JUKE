@@ -1,0 +1,19 @@
+setlist/:id/edit
+<div class="current_list_container">
+  <ol>
+    <h3>Current Playlist</h3>
+  <% @tracks.each do |track| %>
+    <div class="songs_container">
+      <li class="song"><%= track[:name] %></li>
+      <h7 class="song_details">
+        <span class="artist_name"><%= track[:artist] %></span> |
+        <span class="album_name"><%= track[:album] %></span>
+      </h7>
+    </div>
+  <% end %>
+  </ol>
+</div>
+
+<div class="suggested_songs_container">
+  <%= render partial: "show_partial", locals: {list_title: "Suggestions"} %>
+</div>
