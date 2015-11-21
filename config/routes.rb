@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'index#home'
 
   resources :setlists
-  get 'invite_code' => 'jukes#invite_code'
-  get 'join' => 'jukes#join'
+  get 'invite_code' => 'setlists#invite_code'
+  get 'join' => 'setlists#join'
   resources :playlists, only: [:index, :show, :create]
   resources :users
 

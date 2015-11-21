@@ -33,6 +33,14 @@ class SetlistsController < ApplicationController
     end
   end
 
+  def join
+    if @setlist = Setlist.find_by(invite_code: params[:invite_code])
+      redirect_to setlist_path(@setlist)
+    else
+      flash[:alert] = "Incorrect Invite Code!"
+      redirect_to root_path
+    end
+  end
 
   private
 
