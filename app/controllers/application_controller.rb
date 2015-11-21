@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :ensure_current_user
   LOCAL_LOGIN = 'LOCAL_LOGIN'
 
   def current_user
@@ -12,14 +12,12 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-
   def spotify_post(endpoint_url, hash_of_params)
     uri = URI(endpoint_url)
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri)
     request.set_form_data(hash_of_params)
     response = http.request(request)
-    # do something with response
   end
 
   def spotify_get(endpoint_url)

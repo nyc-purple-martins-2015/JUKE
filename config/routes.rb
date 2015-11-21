@@ -3,20 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'index#home'
 
-  resources :jukes
+  resources :setlists
   get 'invite_code' => 'jukes#invite_code'
   get 'join' => 'jukes#join'
   resources :playlists, only: [:index, :show, :create]
+  resources :users
 
-  resources :users do
-    resources :playlists, only: [:index, :show, :create] do
-      resources :tracks, only: [:show, :post, :put]
-    end
-  end
 
   get "login" => "sessions#new", as: :login
   post "sessions" => "sessions#create"
-  delete "logout" => "sessions#destroy", as: :logout
+  get 'logout' => 'sessions#destroy'
 
   get 'auth/:provider/callback' => 'sessions#create', as: :ouath_callback
   get 'auth/:provider' => 'sessions#new', as: :ouath_login

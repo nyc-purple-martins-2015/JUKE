@@ -1,6 +1,6 @@
-user = User.create!(username: "Jon", password: "password", email: "jon@example.com")
-user2 = User.create!(username: "Law", password: "password", email: "law@example.com")
-user3 = User.create!(username: "Cory", password: "password", email: "cory@example.com")
+user = User.create!(username: "Jon", password: "password", email: "jon@example.com", provider: 'LOCAL_LOGIN')
+user2 = User.create!(username: "Law", password: "password", email: "law@example.com", provider: 'LOCAL_LOGIN')
+user3 = User.create!(username: "Cory", password: "password", email: "cory@example.com", provider: 'LOCAL_LOGIN')
 
 setlist = Setlist.create!(name: "my_list", host: user, list_spotify_url: "url.com", invite_code: "12345")
 GuestSetlist.create!(guest: user2, setlist: setlist)

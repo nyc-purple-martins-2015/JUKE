@@ -12,13 +12,19 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session.clear
+    redirect_to login_path
+  end
+
+
   private
 
   def create_from_local_login
-    u = User.find_by(username: params[:username], provider: LOCAL_LOGIN)
-    if u && u.authenticate(params[:password])
+    u = User.find_by(username: params[:user][:username], provider: LOCAL_LOGIN)
+
+    if u && u.authenticate(params[:user][:password])
       session[:user_id] = u.id
-      session[:token] = auth_hash[:credentials][:token]
       redirect_to root_path
     else
       redirect_to login_path
@@ -27,20 +33,19 @@ class SessionsController < ApplicationController
 
   def create_from_social
     auth_hash = request.env['omniauth.auth']
-    ap auth_hash
-    u = User.find_by uid: auth_hash[:uid], provider: auth_hash[:provider]
+    u = User.find_by(uid: auth_hash[:uid])
     if !u
-      u = User.new(uid: auth_hash[:uid], provider: auth_hash[:provider])
-      #Generate a random password so that has_secure_password doesn't prevent a save
+      u=User.new(uid: auth_hash[:provider], provider: auth_hash[:provider])
       u.password = SecureRandom.uuid
+      u.email = auth_hash[:info][:email]
+      u.username = auth_hash[:info][:name]
+      u.save!
     end
-    u.email = auth_hash[:info][:email]
-    u.username  = auth_hash[:info][:name]
-   # u.image = auth_hash[:info][:image]
-    u.save if u.changed?
 
+    binding.pry
     session[:user_id] = u.id
     session[:token] = auth_hash[:credentials][:token]
     redirect_to root_path
   end
+
 end
