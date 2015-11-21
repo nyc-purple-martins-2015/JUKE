@@ -3,11 +3,20 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'index#home'
 
-  resources :jukes
+  resources :setlists
   get 'invite_code' => 'jukes#invite_code'
   get 'join' => 'jukes#join'
+  resources :playlists, only: [:index, :show, :create]
   resources :users
-  resources :sessions, only: [:create, :destroy]
+
+
+  get "login" => "sessions#new", as: :login
+  post "sessions" => "sessions#create"
+  get 'logout' => 'sessions#destroy'
+
+  get 'auth/:provider/callback' => 'sessions#create', as: :ouath_callback
+  get 'auth/:provider' => 'sessions#new', as: :ouath_login
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
