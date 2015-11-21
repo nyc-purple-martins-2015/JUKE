@@ -6,9 +6,10 @@ def create
   @setlist_song = SetlistSong.find(@vote.setlist_song_id)
   @vote.user_id = @user.id
   if @vote.first_vote?(@user, @setlist_song) && @vote.save
-    redirect_to setlist_path(@vote.setlist_song.setlist_id)
+    redirect_to setlist_path(@setlist_song)
   else
-    redirect_to login_path
+    flash[:alert] = "You have already voted for this song!"
+    redirect_to setlist_path(@setlist_song)
   end
 end
 
