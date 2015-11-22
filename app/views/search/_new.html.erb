@@ -5,16 +5,25 @@
 
 <%if @results%>
   <div class="results_container">
+    <%=form_for Song.new do |f|%>
     <% @results.each do |song| %>
-    <p class="song"><%= song[:title] %></p>
+    <div class="song_listing">
+    <span id="song_radio"><%= f.radio_button :title, song[:title] %></span>
+    <%=f.hidden_field :artist, value: song[:artist] %>
+    <%=f.hidden_field :album, value: song[:album] %>
+    <%=f.hidden_field :song_spotify_url, value: song[:url] %>
+    <span class="song"><%= song[:title] %></span>
     <h7 class="song_details">
       <span class="artist_name"><%= song[:artist] %></span> |
       <span class="album_name"><%= song[:album] %></span>
     </h7>
     <% end %>
   </div>
+  <%=f.submit "Suggest Song"%>
+    <% end %>
+  </form>
+  </div>
 <%end%>
 
 <h3 class="search_results"></h3>
-
 

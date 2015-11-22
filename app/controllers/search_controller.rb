@@ -18,6 +18,7 @@ class SearchController < ApplicationController
         id: t["id"]
        }
     end
+
     render partial: 'search/new'
   end
 
