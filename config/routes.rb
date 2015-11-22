@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :playlists, only: [:index, :show, :create]
   resources :users
   resources :votes
+  resources :setlist_songs, only [:update]
 
 
   get "login" => "sessions#new", as: :login

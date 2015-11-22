@@ -3,10 +3,11 @@
   <% setlist_songs.each do |setlist_song| %>
     <% song = setlist_song.song %>
     <li class="song">
-      <% if setlist_song.list_status == 0%>
-      <form><input id="suggest_box" type="checkbox" name="song" value="list_status">
+      <form action="/setlist_songs/<%=setlist_song.id%>" method="post">
+        <input type="hidden" name="_method" value="put" />
+      <% if setlist_song.list_status == 2%>
+        <input id="suggest_box" type="checkbox" name="<%=song.id%>" value = 2>
         <%= song.title %></li>
-      </form>
       <% end %>
     <h7 class="song_details">
       <span class="artist_name"><%= song.artist %></span> |
@@ -18,3 +19,5 @@
       <% end %>
   <% end %>
 </ol>
+        <input type="submit" value="Update List">
+      </form>
