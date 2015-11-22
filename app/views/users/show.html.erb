@@ -1,0 +1,24 @@
+<div class="showpage_users_container">
+  <div class="my_jukes_on_show_page">
+    <% if !@user.setlists.empty? %>
+    <h3>My Jukes</h3>
+    <ul>
+      <% @user.setlists.each do |setlist| %>
+        <li><%= link_to setlist.name, edit_setlist_path(setlist) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="my_friends_jukes_on_show_page">
+    <% if !@user.viewable_lists.empty? %>
+      <h3>My Friends Jukes</h3>
+      <ul>
+        <% @user.viewable_lists.each do |setlist| %>
+          <li><%= link_to setlist.name, setlist_path(setlist) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+</div>
