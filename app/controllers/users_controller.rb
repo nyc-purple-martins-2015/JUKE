@@ -8,6 +8,7 @@ class UsersController < ApplicationController
      @user = User.new(user_params)
      @user.provider = LOCAL_LOGIN
     if @user.save
+      UserMailer.welcome_email(@user).deliver_now
       session[:user_id] = @user.id
       redirect_to root_path
     else
