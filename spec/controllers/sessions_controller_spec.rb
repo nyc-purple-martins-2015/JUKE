@@ -6,13 +6,12 @@ RSpec.describe SessionsController, type: :controller do
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:spotify]
   end
 
-  describe "#create" do
-
     it "#new" do
       get :new
       expect(assigns(:user)).to be_a_kind_of(User)
     end
 
+  describe "#create" do
     it "should successfully create a user" do
       expect{
         post :create, provider: :spotify
@@ -30,9 +29,12 @@ RSpec.describe SessionsController, type: :controller do
         post :create, provider: :github
         expect(response).to redirect_to(root_path)
     end
-
   end
 
+  it 'should redirect to the home page' do
+    delete :destroy
+    expect(response).to redirect_to login_path
+  end
 
 
 end
