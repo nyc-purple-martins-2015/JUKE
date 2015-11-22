@@ -6,6 +6,5 @@
     <%= render partial: "show_partial", locals: {list_title: "Pending Suggestions", setlist_songs: @setlist_songs.where(list_status: [0,1])} %>
   </div>
 </div>
-
-<h2 class="search_form"><%=render partial: "search/new", locals: {setlist: @setlist}%></h2>
+<h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
 

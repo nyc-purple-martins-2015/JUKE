@@ -19,7 +19,7 @@ class SearchController < ApplicationController
        }
     end
 
-    render partial: 'search/new'
+    render partial: 'search/new', locals: {setlist_id: params[:setlist_id]}
   end
 
 end
