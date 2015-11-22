@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :users
   resources :votes
 
+  resources :songs, only: [:create, :destroy]
+  get "search" => "search#new"
+  post "search" => "search#create"
 
   get "login" => "sessions#new", as: :login
   post "sessions" => "sessions#create"
