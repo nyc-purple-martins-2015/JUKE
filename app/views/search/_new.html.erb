@@ -1,8 +1,10 @@
+<div id="new_search_form">
 <%= form_tag '/search' do %>
   <%=text_field_tag 'query'%>
   <%=hidden_field_tag 'setlist_id', setlist_id%>
   <%= submit_tag "Search" %>
 <% end %>
+</div>
 
 <%if @results%>
   <div class="results_container">
