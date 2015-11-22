@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :playlists, only: [:index, :show, :create]
   resources :users
   resources :votes
+  resources :setlist_songs, only: [:update]
 
+  resources :songs, only: [:create, :destroy]
+  get "search" => "search#new"
+  post "search" => "search#create"
 
   get "login" => "sessions#new", as: :login
   post "sessions" => "sessions#create"

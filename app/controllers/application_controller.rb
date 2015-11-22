@@ -50,6 +50,11 @@ class ApplicationController < ActionController::Base
     redirect_to ouath_login_path('spotify') unless current_user
   end
 
+  def search_url(query_array, type)
+    altered_query = query_array.split(" ").join("%20")
+    "https://api.spotify.com/v1/search?q=#{altered_query}&limit=20&type=#{type}"
+  end
+
   def get_setlist_tracks(setlist)
     json = spotify_get(setlist.list_spotify_url)
     parsed = JSON.parse(json.body)

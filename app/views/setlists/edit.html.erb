@@ -1,8 +1,11 @@
-setlist/:id/edit
-<div class="current_list_container">
-  <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
-</div>
+<div class="both_lists">
+  <div class="current_list_container">
+    <ol>
+    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
+    </ol>
+  </div>
 
-<div class="suggested_songs_container">
-  <%= render partial: "show_partial", locals: {list_title: "Suggestions", setlist_songs: @setlist.setlist_songs.where(list_status: [0,1])} %>
+  <div class="suggested_songs_container">
+    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+  </div>
 </div>
