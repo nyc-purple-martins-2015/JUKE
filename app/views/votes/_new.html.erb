@@ -1,0 +1,18 @@
+<div class="vote-buttons">
+  <%= form_for Vote.new do |f| %>
+    <%= f.hidden_field :value, :value => 1 %>
+    <%= f.hidden_field :setlist_song_id, :value => setlist_song.id %>
+    <%= f.submit "Up Vote", class: "button"  %>
+  <% end %>
+
+  <%= form_for Vote.new do |f| %>
+    <%= f.hidden_field :value, :value => -1 %>
+    <%= f.hidden_field :setlist_song_id, :value => setlist_song.id %>
+    <%= f.submit "Down Vote", class: "button"  %>
+  <% end %>
+
+  <p>Vote value: <%= SetlistSong.find(setlist_song.id).vote_count %> </p>
+  <% if flash[:alert] %>
+    <%= flash[:alert] %>
+  <% end %>
+</div>
