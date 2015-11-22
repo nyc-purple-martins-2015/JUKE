@@ -6,11 +6,9 @@
 <%if @results%>
   <div class="results_container">
     <% @results.each do |result| %>
-      <p><%= result %></p>
+      <p><%= result[:title] %>, <%= result[:artist] %></p>
     <% end %>
   </div>
 <%end%>
-
-<h3 class="search_results"></h3>
 
 

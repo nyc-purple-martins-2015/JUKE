@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $(".search_form form").submit(function(event) {
+  $(document).on("submit", ".search_form form", function(event) {
     event.preventDefault();
     $.ajax({
       type: "Post",
