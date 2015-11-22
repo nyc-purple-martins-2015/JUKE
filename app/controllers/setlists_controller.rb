@@ -17,7 +17,6 @@ class SetlistsController < ApplicationController
 
   def edit
     @setlist = Setlist.find(params[:id])
-    @tracks = get_setlist_tracks(@setlist)
   end
 
   def show
