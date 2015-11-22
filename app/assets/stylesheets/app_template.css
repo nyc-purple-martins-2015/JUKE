@@ -2,28 +2,32 @@
   display: none;
 }
 
-.songs_container, .suggested_songs_container {
-  width: 40em;
-  margin-left: 2em;
-  /*display: inline-block;*/
-}
-
 .songs_container {
   margin-top: 1em;
 }
 
 .suggested_songs_container {
+  display: inline-block;
   border: 1px solid black;
-  margin-left: 60em;
-  float: left;
+  float: right;
+  margin-right: 15%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  height: 45em;
+  overflow-y: auto;
 }
 
 .current_list_container {
-  border: 1px solid black;
-  margin-right: 60em;
-  clear: right;
   display: inline-block;
-
+  border: 1px solid black;
+  float: left;
+  margin-left: 15%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  height: 45em;
+  padding: 2%;
+  overflow-y: auto;
 }
 
 .song_details {
