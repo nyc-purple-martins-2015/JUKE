@@ -41,9 +41,7 @@ class SessionsController < ApplicationController
       u.username = auth_hash[:info][:name]
       u.save!
     end
-    # binding.pry
     session[:user_id] = u.id
-    # binding.pry
     session[:token] = auth_hash[:credentials][:token]
     redirect_to root_path
   end
