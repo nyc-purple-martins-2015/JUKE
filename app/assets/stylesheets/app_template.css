@@ -15,8 +15,13 @@
 .suggested_songs_container {
   border: 1px solid black;
   margin-left: 60em;
-  margin-top: -168em;
-  height: 40em;
+  float: left;
+}
+
+.current_list_container {
+  border: 1px solid black;
+  margin-right: 60em;
+  float: right;
 }
 
 .song_details {
