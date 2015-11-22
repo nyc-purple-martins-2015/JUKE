@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root 'index#home'
+  # root 'index#home'
+  root 'sessions#new'
 
   resources :setlists
   get 'invite_code' => 'setlists#invite_code'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   resources :songs, only: [:create, :destroy]
   get "search" => "search#new"
   post "search" => "search#create"
+
+  get "home" => "index#home"
 
   get "login" => "sessions#new", as: :login
   post "sessions" => "sessions#create"
