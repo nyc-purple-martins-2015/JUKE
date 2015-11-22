@@ -1,33 +1,24 @@
 <div class="showpage_users_container">
   <div class="my_jukes_on_show_page">
+    <% if !@user.setlists.empty? %>
     <h3>My Jukes</h3>
     <ol>
       <% @user.setlists.each do |setlist| %>
         <li><%= setlist.name %></li>
       <% end %>
     </ol>
-    <div class="new_juke_button">
-      <%= button_to "new JUKE", new_setlist_path, method: :get, class: "button" %>
-    </div>
+    <% end %>
   </div>
 
   <div class="my_friends_jukes_on_show_page">
-    <h3>My Friends Jukes</h3>
-    <ol>
-      <% @user.viewable_lists.each do |setlist| %>
-        <li><%= setlist.name %></li>
-      <% end %>
-    </ol>
-    <div class="join_juke_button">
-      <%= button_to "join JUKE", invite_code_path, method: :get, class: "button" %>
-    </div>
-
-    <div class="join_juke_form">
-      <%= form_tag join_path, method: :get do %>
-      <%= label_tag :invite_code %>
-      <%= text_field_tag :invite_code, nil, placeholder: "ex: frogs1435" %>
-      <%= submit_tag "join JUKE", class: "button" %>
-      <% end %>
-    </div>
+    <% if !@user.viewable_lists.empty? %>
+      <h3>My Friends Jukes</h3>
+      <ol>
+        <% @user.viewable_lists.each do |setlist| %>
+          <li><%= setlist.name %></li>
+        <% end %>
+      </ol>
+    <% end %>
   </div>
+
 </div>
