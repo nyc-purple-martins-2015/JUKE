@@ -17,6 +17,18 @@ if ENV['CIRCLE_ARTIFACTS']
   SimpleCov.coverage_dir(dir)
 end
 
+OmniAuth.config.test_mode = true
+
+omniauth_hash = {'provider' => 'spotify',
+                  'uid' => 'cgrad01',
+                  'info' => {'name' => 'Corey Beck',
+                  'email' => 'cgrad01@gmail.com'},
+                  'password' => 'juke4life',
+                  'credentials' => {'token' => '12345'}
+                }
+
+OmniAuth.config.add_mock(:spotify, omniauth_hash)
+
 SimpleCov.start
 
 

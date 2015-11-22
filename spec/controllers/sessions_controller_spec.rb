@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
@@ -9,8 +9,8 @@ RSpec.describe SessionsController, type: :controller do
   describe "#create" do
 
     it "should successfully create a user" do
-      expect {
-        post :create, provider :spotify
+      expect{
+        post :create, provider: :spotify
       }.to change{ User.count }.by(1)
     end
 
