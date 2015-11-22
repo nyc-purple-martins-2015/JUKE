@@ -1,0 +1,16 @@
+<%= form_tag '/search' do %>
+  <%=text_field_tag 'query'%>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%if @results%>
+  <div class="results_container">
+    <% @results.each do |result| %>
+      <p><%= result %></p>
+    <% end %>
+  </div>
+<%end%>
+
+<h3 class="search_results"></h3>
+
+
