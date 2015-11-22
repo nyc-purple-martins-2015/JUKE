@@ -21,7 +21,9 @@
 .current_list_container {
   border: 1px solid black;
   margin-right: 60em;
-  float: right;
+  clear: right;
+  display: inline-block;
+
 }
 
 .song_details {
