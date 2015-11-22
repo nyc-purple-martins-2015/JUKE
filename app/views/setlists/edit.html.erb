@@ -1,4 +1,3 @@
-setlist/:id/edit
 <div class="both_lists">
   <div class="current_list_container">
     <ol>
@@ -7,7 +6,6 @@ setlist/:id/edit
   </div>
 
   <div class="suggested_songs_container">
-    <h3> Suggested Tracks </h3>
-    <%= render partial: "show_partial", locals: {list_title: "Suggestions", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
   </div>
 </div>
