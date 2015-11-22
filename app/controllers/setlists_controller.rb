@@ -30,7 +30,7 @@ class SetlistsController < ApplicationController
     suggested_songs = []
     params[:setlist_songs].each { |s| suggested_songs << SetlistSong.find(s)}
     suggested_songs.each{|s| s.update_attributes(list_status: 2)}
-    binding.pry
+    redirect_to edit_setlist_path
   end
 
   def create
