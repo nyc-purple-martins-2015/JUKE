@@ -17,7 +17,6 @@ class SetlistsController < ApplicationController
 
   def edit
     @setlist = Setlist.find(params[:id])
-    # @setlist_songs = @setlist.setlist_songs.where(list_status: 0)
     @tracks = get_setlist_tracks(@setlist)
   end
 
@@ -28,6 +27,9 @@ class SetlistsController < ApplicationController
 
   def update
     @setlist = Setlist.find(params[:id])
+    suggested_songs = []
+    params[:setlist_songs].each { |s| suggested_songs << SetlistSong.find(s)}
+    suggested_songs.each{|s| s.update_attributes(list_status: 2)}
     binding.pry
   end
 
@@ -65,9 +67,5 @@ class SetlistsController < ApplicationController
 # should be forced to have a valid list_spotify_url that attaches to spotify
   def setlist_params
     params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
-  end
-
-  def setlist_songs_params
-    params.require(:setlist).require(:setlist_song).permit(:id)
   end
 end
