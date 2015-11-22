@@ -5,10 +5,16 @@
 
 <%if @results%>
   <div class="results_container">
-    <% @results.each do |result| %>
-      <p><%= result[:title] %>, <%= result[:artist] %></p>
+    <% @results.each do |song| %>
+    <p class="song"><%= song[:title] %></p>
+    <h7 class="song_details">
+      <span class="artist_name"><%= song[:artist] %></span> |
+      <span class="album_name"><%= song[:album] %></span>
+    </h7>
     <% end %>
   </div>
 <%end%>
+
+<h3 class="search_results"></h3>
 
 
