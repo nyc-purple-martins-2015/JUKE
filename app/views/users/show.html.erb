@@ -2,22 +2,22 @@
   <div class="my_jukes_on_show_page">
     <% if !@user.setlists.empty? %>
     <h3>My Jukes</h3>
-    <ol>
+    <ul>
       <% @user.setlists.each do |setlist| %>
-        <li><%= setlist.name %></li>
+        <li><%= link_to setlist.name, edit_setlists_path(setlist) %></li>
       <% end %>
-    </ol>
+    </ul>
     <% end %>
   </div>
 
   <div class="my_friends_jukes_on_show_page">
     <% if !@user.viewable_lists.empty? %>
       <h3>My Friends Jukes</h3>
-      <ol>
+      <ul>
         <% @user.viewable_lists.each do |setlist| %>
-          <li><%= setlist.name %></li>
+          <li><%= link_to setlist.name, setlist_path(setlist) %></li>
         <% end %>
-      </ol>
+      </ul>
     <% end %>
   </div>
 
