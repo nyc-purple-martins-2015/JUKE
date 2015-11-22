@@ -4,7 +4,7 @@
     <h3>My Jukes</h3>
     <ul>
       <% @user.setlists.each do |setlist| %>
-        <li><%= link_to setlist.name, edit_setlists_path(setlist) %></li>
+        <li><%= link_to setlist.name, edit_setlist_path(setlist) %></li>
       <% end %>
     </ul>
     <% end %>
