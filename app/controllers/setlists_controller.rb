@@ -17,6 +17,7 @@ class SetlistsController < ApplicationController
 
   def edit
     @setlist = Setlist.find(params[:id])
+    @setlist_songs = @setlist.setlist_songs
   end
 
   def show
@@ -27,8 +28,8 @@ class SetlistsController < ApplicationController
   def update
     @setlist = Setlist.find(params[:id])
     suggested_songs = []
-    params[:setlist_songs].each { |s| suggested_songs << SetlistSong.find(s)}
-    suggested_songs.each{|s| s.update_attributes(list_status: 2)}
+    params[:setlist_songs].each { |setlist_song_id| suggested_songs << SetlistSong.find_by(id: setlist_song_id)}
+    suggested_songs.each{|setlist_song| setlist_song.update_attributes(list_status: 2)}
     redirect_to edit_setlist_path
   end
 
