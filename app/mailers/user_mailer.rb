@@ -1,5 +1,5 @@
-class UserMailer < ApplicationMailer
-  default from: 'juke-team@jukejukejuke.com'
+class UserMailer < ActionMailer::Base
+  default from: 'jukeappteam@gmail.com'
 
   def welcome_email(user)
     @user = user
