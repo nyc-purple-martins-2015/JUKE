@@ -17,13 +17,20 @@ class SetlistsController < ApplicationController
 
   def edit
     @setlist = Setlist.find(params[:id])
-    @setlist_songs = @setlist.setlist_songs.where(list_status: 0)
     @tracks = get_setlist_tracks(@setlist)
   end
 
   def show
     @setlist = Setlist.find(params[:id])
     @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
+  end
+
+  def update
+    @setlist = Setlist.find(params[:id])
+    suggested_songs = []
+    params[:setlist_songs].each { |s| suggested_songs << SetlistSong.find(s)}
+    suggested_songs.each{|s| s.update_attributes(list_status: 2)}
+    redirect_to edit_setlist_path
   end
 
   def create
@@ -61,5 +68,4 @@ class SetlistsController < ApplicationController
   def setlist_params
     params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
   end
-
 end
