@@ -28,6 +28,13 @@ class SetlistsController < ApplicationController
 
   def create
     ensure_current_user
+
+    if params[:setlist][:new_setlist]
+      res = spotify_post("https://api.spotify.com/v1/users/#{current_user.uid}/playlists", name: setlist_params[:name])
+      binding.pry
+      return redirect_to new_setlist_path
+    end
+
     setlist = Setlist.new(setlist_params)
     if setlist.save
       array_of_tracks_hash = get_setlist_tracks(setlist)
