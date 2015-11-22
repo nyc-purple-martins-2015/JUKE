@@ -1,23 +1,28 @@
 <ol>
-  <h3><%= list_title %></h3>
-  <% setlist_songs.each do |setlist_song| %>
-    <% song = setlist_song.song %>
-    <li class="song">
-      <form action="/setlist_songs/<%=setlist_song.id%>" method="post">
-        <input type="hidden" name="_method" value="put" />
+  <h3>
+    <%= list_title %></h3>
+    <%= form_for @setlist, method: "put" do |f| %>
+
+    <% setlist_songs.each do |setlist_song| %>
+      <% song = setlist_song.song %>
+
+    <li data-id="<%= setlist_song.id %>" class="song">
       <% if setlist_song.list_status == 2%>
-        <input id="suggest_box" type="checkbox" name="<%=song.id%>" value = 2>
-        <%= song.title %></li>
+        <%= f.check_box :setlist_songs %>
+        <%= song.title %>
+    </li>
       <% end %>
+
     <h7 class="song_details">
       <span class="artist_name"><%= song.artist %></span> |
       <span class="album_name"><%= song.album %></span>
     </h7>
     <div class="vote_buttons">
+
       <% if params[:action] == "show" %>
         <%= render partial: 'votes/new', layout: false, locals: {setlist_song: setlist_song} %>
       <% end %>
+    <% end %>
+      <%= f.submit "Update!" %>
   <% end %>
 </ol>
-        <input type="submit" value="Update List">
-      </form>

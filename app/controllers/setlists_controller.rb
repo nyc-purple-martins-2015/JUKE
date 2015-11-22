@@ -26,6 +26,11 @@ class SetlistsController < ApplicationController
     @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
   end
 
+  def update
+    @setlist = Setlist.find(params[:id])
+    binding.pry
+  end
+
   def create
     ensure_current_user
     setlist = Setlist.new(setlist_params)
@@ -62,4 +67,7 @@ class SetlistsController < ApplicationController
     params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
   end
 
+  def setlist_songs_params
+    params.require(:setlist).require(:setlist_song).permit(:id)
+  end
 end
