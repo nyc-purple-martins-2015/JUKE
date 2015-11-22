@@ -6,12 +6,12 @@
     <% setlist_songs.each do |setlist_song| %>
       <% song = setlist_song.song %>
 
-    <li data-id="<%= setlist_song.id %>" class="song">
-      <% if setlist_song.list_status == 2%>
-        <%= f.check_box :setlist_songs %>
+    <li class="song">
+      <% if setlist_song.list_status == 0%>
+        <%= check_box_tag "setlist_songs[]", setlist_song.id %>
+      <% end %>
         <%= song.title %>
     </li>
-      <% end %>
 
     <h7 class="song_details">
       <span class="artist_name"><%= song.artist %></span> |
