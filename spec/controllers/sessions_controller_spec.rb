@@ -35,6 +35,4 @@ RSpec.describe SessionsController, type: :controller do
     delete :destroy
     expect(response).to redirect_to login_path
   end
-
-
 end
