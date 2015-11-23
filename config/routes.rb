@@ -4,9 +4,14 @@ Rails.application.routes.draw do
   # root 'index#home'
   root 'sessions#new'
 
-  resources :setlists
+  resources :setlists do
+    get 'invite' => 'setlists#invite'
+    get 'send_invites' => 'setlists#send_invites'
+  end
+
   get 'invite_code' => 'setlists#invite_code'
   get 'join' => 'setlists#join'
+
   resources :playlists, only: [:index, :show, :create]
   resources :users
   resources :votes

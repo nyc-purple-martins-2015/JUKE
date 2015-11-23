@@ -58,5 +58,10 @@ class ApplicationController < ActionController::Base
     tracks
   end
 
+  def parse_emails(string)
+    emails = string.strip.split(",")
+    return emails
+  end
+
   protect_from_forgery with: :exception
 end
