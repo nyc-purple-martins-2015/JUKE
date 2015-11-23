@@ -5,13 +5,18 @@ class SetlistsController < ApplicationController
   end
 
   def new
-    ensure_current_user
-    @setlist = Setlist.new
-    res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
-    parsed = JSON.parse(res.body)
-    @playlists = []
-    parsed["items"].each do |playlist|
-      @playlists << {name: playlist["name"], url: playlist["href"]}
+    if logged_in?
+      ensure_current_user
+      @setlist = Setlist.new
+      res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
+      parsed = JSON.parse(res.body)
+      @playlists = []
+      parsed["items"].each do |playlist|
+        @playlists << {name: playlist["name"], url: playlist["href"]}
+      end
+    else
+      flash[:alert] = "Log in to access JUKE"
+      redirect_to root_path
     end
   end
 
