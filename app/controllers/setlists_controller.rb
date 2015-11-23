@@ -49,6 +49,10 @@ class SetlistsController < ApplicationController
   def create
     ensure_current_user
 
+    if params[:setlist][:new_setlist]
+      result =SpotifyNewPlaylistPoster.new(session[:token], { user: current_user, name: params[:setlist][:name] }).post
+    end
+
     setlist = Setlist.new(setlist_params)
     if setlist.save
       array_of_tracks_hash = get_setlist_tracks(setlist)
