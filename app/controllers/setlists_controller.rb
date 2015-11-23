@@ -7,7 +7,7 @@ class SetlistsController < ApplicationController
   def new
     ensure_current_user
     @setlist = Setlist.new
-    res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
+    res = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
     parsed = JSON.parse(res.body)
     @playlists = []
     parsed["items"].each do |playlist|
