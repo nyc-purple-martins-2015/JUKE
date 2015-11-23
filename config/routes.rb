@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   post "sessions" => "sessions#create"
   get 'logout' => 'sessions#destroy'
 
-  get 'auth/:provider/callback' => 'sessions#create', as: :ouath_callback
-  get 'auth/:provider' => 'sessions#new', as: :ouath_login
+  get '/auth/:provider/callback' => 'sessions#create', as: :ouath_callback
+  get '/auth/:provider' => 'sessions#new', as: :ouath_login
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
