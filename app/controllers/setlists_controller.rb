@@ -26,8 +26,11 @@ class SetlistsController < ApplicationController
   end
 
   def send_invites
-
-
+    @setlist = Setlist.find(params[:setlist_id])
+    parse_emails(params[:send]).each do |email|
+      UserMailer.invite_email(email).deliver
+    end
+    redirect_to setlist_path(@setlist)
   end
 
   def show

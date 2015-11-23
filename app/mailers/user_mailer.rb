@@ -8,6 +8,6 @@ class UserMailer < ActionMailer::Base
   end
 
   def invite_email(email)
-    mail(to:email, subject: "You've been invited to join #{current_user.username}'s Juke!"
+    mail(to:email, subject: "You've been invited to join a Juke!")
   end
 end
