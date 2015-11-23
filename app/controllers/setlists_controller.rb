@@ -20,9 +20,22 @@ class SetlistsController < ApplicationController
     @setlist_songs = @setlist.setlist_songs
   end
 
+  def invite
+    @setlist = Setlist.find(params[:setlist_id])
+    render partial: "invite", local: {setlist: @setlist}
+  end
+
+  def send_invites
+    @setlist = Setlist.find(params[:setlist_id])
+    parse_emails(params[:send]).each do |email|
+      UserMailer.invite_email(email, @setlist).deliver
+    end
+    redirect_to edit_setlist_path(@setlist)
+  end
+
   def show
     @setlist = Setlist.find(params[:id])
-    @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
+    @setlist_songs = @setlist.setlist_songs
   end
 
   def update
@@ -35,12 +48,6 @@ class SetlistsController < ApplicationController
 
   def create
     ensure_current_user
-
-    if params[:setlist][:new_setlist]
-      res = spotify_post("https://api.spotify.com/v1/users/#{current_user.uid}/playlists", name: setlist_params[:name])
-      binding.pry
-      return redirect_to new_setlist_path
-    end
 
     setlist = Setlist.new(setlist_params)
     if setlist.save

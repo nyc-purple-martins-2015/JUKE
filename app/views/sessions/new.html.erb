@@ -1,13 +1,22 @@
+<% if @errors %>
+  <section class="errors">
+    <p>Errors:</p>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
 <section class="login_page">
+  <h2 class="guest_login"><%=render partial: "/sessions/login_form"%></h2>
+  <h2 class="guest_register"><%=render partial: "users/register_form"%></h2>
 
-<h2 class="guest_login"><%=render partial: "login_form"%></h2>
-<h2 class="guest_register"><%=render partial: "users/register_form"%></h2>
+  <a href="/auth/spotify">Login with your Spotify account</a>
+  <h3>Import and crowd source your playlists!</h3>
 
-<a href="/auth/spotify">Login with your Spotify account</a>
-<h3>Import and crowdsource your playlists!</h3>
-
-<h4>Not a Spotify member? Login or sign up as a party guest!</h4>
-<a id="login_button" href="/login">Login<a>
-<a id="register_button" href="/users/new">Sign Up<a>
-
+  <h4>Not a Spotify member? Login or sign up as a party guest!</h4>
+  <a id="login_button" href="/login">Login<a>
+  <a id="register_button" href="/users/new">Sign Up<a>
 </section>
