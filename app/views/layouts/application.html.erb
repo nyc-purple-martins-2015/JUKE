@@ -10,7 +10,7 @@
 <body>
 <div id="header_container">
   <div class="header">
-    <a class="logo" href="/"><%=image_tag("Header1.png")%></a>
+    <a class="logo" href="<%= home_path %>"><%=image_tag("Header1.png")%></a>
     <% if logged_in? %>
       <a class="login_and_logout" href="<%= logout_path %>">logout</a>
     <% else %>

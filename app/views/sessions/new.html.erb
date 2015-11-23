@@ -1,3 +1,4 @@
+<<<<<<< dab828c8bc7406e68d75983281a6e694d3b5652a
 <% if @errors %>
   <section class="errors">
     <p>Errors:</p>
@@ -8,6 +9,26 @@
     </ul>
   </section>
 <% end %>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JUKE</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<div id="site_label_image">
+  <%=image_tag("Header1.png")%>
+</div>
+
+<section class="login_page">
+
+<h2 class="guest_login"><%=render partial: "login_form"%></h2>
+<h2 class="guest_register"><%=render partial: "users/register_form"%></h2>
+>>>>>>> Add styling for site
 
 <section class="login_page">
   <h2 class="guest_login"><%=render partial: "/sessions/login_form"%></h2>

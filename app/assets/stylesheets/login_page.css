@@ -1,7 +1,10 @@
 .login_page{
   position: relative;
-  top: 18em;
+  top: 15em;
+  left: 23%;
   text-align: center;
+  width: 20em;
+  font-size: 2em
 }
 
 .guest_login {
@@ -10,4 +13,15 @@
 
 .guest_register {
   display: none;
+}
+
+#site_label_image img {
+  position: absolute;
+  height: 12em;
+  left: 35%;
+  top: 8em;
+}
+
+html {
+  background-image: url('login_bg.png');
 }
