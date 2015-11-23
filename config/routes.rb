@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'index#home'
 
-  resources :setlists
+  resources :setlists do
+    get 'invite' => 'setlists#invite'
+    get 'send_invites' => 'setlists#send_invites'
+  end
+
   get 'invite_code' => 'setlists#invite_code'
   get 'join' => 'setlists#join'
+
   resources :playlists, only: [:index, :show, :create]
   resources :users
   resources :votes

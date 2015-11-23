@@ -6,4 +6,8 @@ class UserMailer < ActionMailer::Base
     @url = 'example.com/login'
     mail(to: @user.email, subject: 'Welcome to Juke')
   end
+
+  def invite_email(email)
+    mail(to:email, subject: "You've been invited to join #{current_user.username}'s Juke!"
+  end
 end
