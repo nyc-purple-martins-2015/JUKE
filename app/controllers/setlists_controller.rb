@@ -54,7 +54,6 @@ class SetlistsController < ApplicationController
         setlist_song = SetlistSong.new(setlist: setlist, song: song, list_status: 2)
         tracks_not_loaded << setlist_song.title unless setlist_song.save
       end
-      flash[:alert] = "The following songs were not loaded \n \n #{tracks_not_loaded.join(", ")}."
       redirect_to edit_setlist_path(setlist)
     else
       flash[:alert] = "I'm sorry but we were unable to use that setlist"
