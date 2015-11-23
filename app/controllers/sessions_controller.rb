@@ -41,10 +41,8 @@ class SessionsController < ApplicationController
       u.username = auth_hash[:info][:name]
       u.save!
     end
-
     session[:user_id] = u.id
     session[:token] = auth_hash[:credentials][:token]
     redirect_to home_path
   end
-
 end
