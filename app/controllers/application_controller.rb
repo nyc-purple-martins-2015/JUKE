@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   def current_user
     current_user ||= User.find_by(id: session[:user_id])
   end
+  # if i want to use this in view we should put this in helper
 
   def logged_in?
     !!current_user
@@ -61,8 +62,7 @@ class ApplicationController < ActionController::Base
   ################
 
   def parse_emails(string)
-    emails = string.strip.split(",")
-    return emails
+    string.strip.split(",")
   end
 
   protect_from_forgery with: :exception
