@@ -20,16 +20,6 @@ class ApplicationController < ActionController::Base
     response = http.request(request)
   end
 
-  def spotify_get(endpoint_url)
-    uri = URI(endpoint_url)
-    req = Net::HTTP::Get.new(uri)
-    req['Authorization'] = "Bearer #{session[:token]}"
-    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-      http.request(req)
-    end
-    res
-  end
-
   def ensure_current_user
     redirect_to ouath_login_path('spotify') unless current_user
   end
@@ -40,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_setlist_tracks(setlist)
-    json = spotify_get(setlist.list_spotify_url)
+    json = SpotifyPlaylistGetter.new(session[:token], setlist: setlist).get
     parsed = JSON.parse(json.body)
     t_array = parsed["tracks"]["items"]
 
