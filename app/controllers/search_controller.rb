@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
 
+  # expect Lawson to refactor this to a spotify class
   def create
     @query = params[:query]
 
@@ -21,6 +22,7 @@ class SearchController < ApplicationController
 
     render partial: 'search/new', locals: {setlist_id: params[:setlist_id]}
   end
+  ###############
 
 end
 
