@@ -73,6 +73,11 @@ a#header-juke-link {
 .field_with_errors {
   display: inline-block;
 }
+
 .field_with_errors input{
   background-color: yellow;
+}
+
+.flash_container {
+    text-align: center;
 }
