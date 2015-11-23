@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  helper_method :current_user, :logged_in?, :ensure_current_user
-
+  helper_method :current_user, :logged_in?
   LOCAL_LOGIN = 'LOCAL_LOGIN'
 
   before_action :require_login
@@ -32,9 +31,6 @@ class ApplicationController < ActionController::Base
   end
   ##########
 
-  def ensure_current_user
-    redirect_to ouath_login_path('spotify') unless current_user
-  end
 
   #This should be removed when jon is ready
   def search_url(query_array, type)

@@ -5,7 +5,6 @@ class SetlistsController < ApplicationController
   end
 
   def new
-    ensure_current_user
     @setlist = Setlist.new
     res = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
     parsed = JSON.parse(res.body)
@@ -47,7 +46,6 @@ class SetlistsController < ApplicationController
   end
 
   def create
-    ensure_current_user
 
     if params[:setlist][:new_setlist]
       result =SpotifyNewPlaylistPoster.new(session[:token], { user: current_user, name: params[:setlist][:name] }).post
