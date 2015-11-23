@@ -69,3 +69,10 @@ a#header-juke-link {
 .errors ul {
   list-style-position: inside;
 }
+
+.field_with_errors {
+  display: inline-block;
+}
+.field_with_errors input{
+  background-color: yellow;
+}
