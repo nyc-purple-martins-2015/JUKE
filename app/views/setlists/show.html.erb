@@ -1,10 +1,23 @@
 <div class="showpage_songs_container">
-  <div class="showpage_songs_container_spotify">
-    <%= render partial: "show_partial", locals: {list_title: "Spotify Playlist", setlist_songs: @setlist_songs.where(list_status: 2)} %>
-  </div>
-  <div class="showpage_songs_container_pending">
-    <%= render partial: "show_partial", locals: {list_title: "Pending Suggestions", setlist_songs: @setlist_songs.where(list_status: [0,1])} %>
-  </div>
-</div>
-<h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
+  <ol>
+    <h3> Spotify Playlist </h3>
+    <% setlist_songs = @setlist_songs.where(list_status: 2) %>
+    <% setlist_songs.each do |setlist_song| %>
+      <% song = setlist_song.song %>
+      <li><span class="song_name"><%= song.title %></span></li>
 
+      <h7 class="song_details">
+        <span class="artist_name"><%= song.artist %></span> |
+        <span class="album_name"><%= song.album %></span>
+      </h7>
+
+       <div class="vote_buttons">
+          <% if params[:action] == "show" %>
+            <%= render partial: 'votes/new', layout: false, locals: {setlist_song: setlist_song} %>
+          <% end %>
+        </div>
+    <% end %>
+  </ol>
+
+  <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
+</div>
