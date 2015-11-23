@@ -15,6 +15,7 @@
   margin-bottom: 2%;
   padding: 2%;
   height: 45em;
+  width: 30em;
   overflow-y: auto;
 }
 
@@ -27,6 +28,7 @@
   margin-bottom: 2%;
   height: 45em;
   padding: 2%;
+  width: 30em;
   overflow-y: auto;
 }
 
