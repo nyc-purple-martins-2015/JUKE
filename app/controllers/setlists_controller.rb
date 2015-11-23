@@ -30,7 +30,7 @@ class SetlistsController < ApplicationController
     parse_emails(params[:send]).each do |email|
       UserMailer.invite_email(email, @setlist).deliver
     end
-    redirect_to setlist_path(@setlist)
+    redirect_to edit_setlist_path(@setlist)
   end
 
   def show
@@ -48,12 +48,6 @@ class SetlistsController < ApplicationController
 
   def create
     ensure_current_user
-
-    if params[:setlist][:new_setlist]
-      res = spotify_post("https://api.spotify.com/v1/users/#{current_user.uid}/playlists", name: setlist_params[:name])
-      binding.pry
-      return redirect_to new_setlist_path
-    end
 
     setlist = Setlist.new(setlist_params)
     if setlist.save

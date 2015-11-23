@@ -13,27 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   def spotify_post(endpoint_url, hash_of_params)
-    # { "Content-Type" => "application/json", "Authorization" => "Bearer #{session[:token]}" }
-    hash_of_params
     uri = URI(endpoint_url)
-    # http = Net::HTTP.new(uri.host, uri.port, use_ssl: true, "Content-Type" => "application/json", "Authorization" => "Bearer #{session[:token]}")
-    req = Net::HTTP::Post.new(uri)
-    # req['Authorization'] = "Bearer #{session[:token]}"
-    # binding.pry
-    req.set_form_data(hash_of_params)
-
-    req.content_type = "JUKE/json"
-    req['Authorization'] = "Bearer #{session[:token]}"
-
-    res = Net::HTTP.start(uri.hostname, uri.port) do |http|
-      http.request(req)
-    end
-    # request['Authorization'] = "Bearer #{session[:token]}"
-    # request["Content-Type"] = "application/json"
-    binding.pry
-
-    # response = http.request(request)
-    # binding.pry
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri)
+    request.set_form_data(hash_of_params)
+    response = http.request(request)
   end
 
   def spotify_get(endpoint_url)
