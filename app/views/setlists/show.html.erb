@@ -1,5 +1,7 @@
 <div class="showpage_songs_container">
   <div class="showpage_songs_container_spotify">
+
+
     <%= render partial: "show_partial", locals: {list_title: "Spotify Playlist", setlist_songs: @setlist_songs.where(list_status: 2)} %>
   </div>
   <div class="showpage_songs_container_pending">
