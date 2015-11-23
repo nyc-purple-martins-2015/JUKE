@@ -55,3 +55,17 @@ a#header-juke-link {
 .login_and_logout {
   margin-left: 60em;
 }
+
+.errors {
+  text-align: center;
+  margin: 20px auto;
+  width: 600px;
+  margin-bottom: -10%;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  color: red;
+}
+
+.errors ul {
+  list-style-position: inside;
+}
