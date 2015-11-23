@@ -1,7 +1,6 @@
 class SongsController < ApplicationController
 
   def create
-    binding.pry
     setlist = Setlist.find_by(id: params[:setlist_id])
     song = Song.find_or_create_by(song_params)
     setlist_song = SetlistSong.find_by(song: song, setlist: setlist)

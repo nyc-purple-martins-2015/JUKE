@@ -15,11 +15,11 @@ body {
 }
 
 .footer {
-   position:fixed;
-   bottom: 0em;
-   width: 100%;
-   height:2.5em;
-   background-color: #6cf;
+  position: fixed;
+  bottom: 0em;
+  width: 100%;
+  height:2.5em;
+  background-color: #6cf;
 }
 
 a#header-juke-link {
@@ -54,4 +54,30 @@ a#header-juke-link {
 
 .login_and_logout {
   margin-left: 60em;
+}
+
+.errors {
+  text-align: center;
+  margin: 20px auto;
+  width: 600px;
+  margin-bottom: -10%;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  color: red;
+}
+
+.errors ul {
+  list-style-position: inside;
+}
+
+.field_with_errors {
+  display: inline-block;
+}
+
+.field_with_errors input{
+  background-color: yellow;
+}
+
+.flash_container {
+    text-align: center;
 }
