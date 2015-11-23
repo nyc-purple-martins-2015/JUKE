@@ -18,6 +18,13 @@
     <% end %>
   </div>
 </div>
+
+<div id="flash-container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %>
+  <% end %>
+</div>
+
 <%= yield %>
 
 <div id="footer_container">

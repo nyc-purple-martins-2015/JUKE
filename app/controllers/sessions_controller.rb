@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
       session[:user_id] = u.id
       redirect_to root_path
     else
+      flash[:notice] = 'Invalid username/password combination. Please try again.'
       redirect_to login_path
     end
   end
