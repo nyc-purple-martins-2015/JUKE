@@ -9,7 +9,7 @@ class UsersController < ApplicationController
      @user.provider = LOCAL_LOGIN
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to home_path
     else
       @errors = @user.errors.full_messages
       render "/sessions/new"
