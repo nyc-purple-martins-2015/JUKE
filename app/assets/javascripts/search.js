@@ -1,18 +1,18 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  $(document).on("submit", ".search_form #new_search_form form", function(event) {
-    event.preventDefault();
+//   $(document).on("submit", ".search_form #new_search_form form", function(event) {
+//     event.preventDefault();
 
-    $.ajax({
-      type: "Post",
-      url: "/search",
-      data: $(this).serialize()
-      }).done(function(results) {
+//     $.ajax({
+//       type: "Post",
+//       url: "/search",
+//       data: $(this).serialize()
+//       }).done(function(results) {
 
-        $(".search_form").html(results);
-      });
+//         $(".search_form").html(results);
+//       });
 
 
-  });
+//   });
 
-});
+// });

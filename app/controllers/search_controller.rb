@@ -1,10 +1,8 @@
 class SearchController < ApplicationController
 
-  # expect Lawson to refactor this to a spotify class
   def create
     @query = params[:query]
-
-    json = spotify_get(search_url(@query, "track"))
+    json = SpotifySearcher.new(session[:token], @query).get
     parsed = JSON.parse(json.body)
     t_array = parsed["tracks"]["items"]
     @results = t_array.map do |t|
@@ -22,7 +20,5 @@ class SearchController < ApplicationController
 
     render partial: 'search/new', locals: {setlist_id: params[:setlist_id]}
   end
-  ###############
-
 end
 
