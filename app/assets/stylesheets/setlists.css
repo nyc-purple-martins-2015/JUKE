@@ -1,3 +1,39 @@
-// Place all the styles related to the setlists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.songs_container {
+  margin-top: 1em;
+}
+
+.current_list_container {
+  display: inline-block;
+  border: 1px solid black;
+  margin-left: 15%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  height: 40em;
+  width: 30%;
+  float:left;
+  overflow-y: auto;
+}
+
+.suggested_songs_container {
+  display: inline-block;
+  border: 1px solid black;
+  margin-right: 15%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  height: 40em;
+  width: 30%;
+  float: right;
+  overflow-y: auto;
+}
+
+
+.current_list_container #update_button{
+  display:none;
+}
+
+.list_title {
+  text-align: center;
+  text-decoration: underline;
+}

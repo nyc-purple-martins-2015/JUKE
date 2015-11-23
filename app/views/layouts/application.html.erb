@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header_container">
+<div class="wrapper" id="header_container">
   <div class="header">
     <a class="logo" href="/home"><%=image_tag("Header1.png")%></a>
     <% if logged_in? %>
@@ -27,10 +27,8 @@
 
 <%= yield %>
 
-<div id="footer_container">
-  <div class = "footer">
-
-  </div>
+<div class= "footer">
+<p>Copyright (c) 2015</p>
 </div>
 
 </body>
