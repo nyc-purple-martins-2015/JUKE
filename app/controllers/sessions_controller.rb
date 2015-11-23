@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
     if u && u.authenticate(params[:user][:password])
       session[:user_id] = u.id
-      redirect_to root_path
+      redirect_to home_path
     else
       flash[:notice] = 'Invalid username/password combination. Please try again.'
       redirect_to login_path
@@ -45,7 +45,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = u.id
     session[:token] = auth_hash[:credentials][:token]
-    redirect_to root_path
+    redirect_to home_path
   end
 
 end
