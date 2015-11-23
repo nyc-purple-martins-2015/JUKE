@@ -7,7 +7,8 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Welcome to Juke')
   end
 
-  def invite_email(email)
+  def invite_email(email, setlist)
+    @setlist = setlist
     mail(to:email, subject: "You've been invited to join a Juke!")
   end
 end
