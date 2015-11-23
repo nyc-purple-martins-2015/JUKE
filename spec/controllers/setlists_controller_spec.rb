@@ -1,5 +1,9 @@
+# Don't commit empty tests
+#
+# Also: proof to any code reviewer that you used rails generate controller
+# Setlists
+#
 require 'rails_helper'
 
-RSpec.describe SetlistsController, type: :controller do
-
+describe SetlistsController do
 end

@@ -16,10 +16,12 @@ class ApplicationController < ActionController::Base
     uri = URI(endpoint_url)
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri)
+    request['Authorization'] = "Bearer #{session[:token]}"
     request.set_form_data(hash_of_params)
     response = http.request(request)
   end
 
+  # Extract to a method object
   def spotify_get(endpoint_url)
     uri = URI(endpoint_url)
     req = Net::HTTP::Get.new(uri)

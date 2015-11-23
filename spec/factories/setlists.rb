@@ -5,5 +5,4 @@ FactoryGirl.define do
     list_spotify_url {Faker::Internet.url('spotify.com')}
     invite_code "a1b2c3"
   end
-
 end

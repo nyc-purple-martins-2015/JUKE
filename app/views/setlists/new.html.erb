@@ -7,6 +7,7 @@
         <%= form_for(@setlist) do |f| %>
           <%= f.hidden_field :name, value: playlist[:name] %>
           <%= f.hidden_field :list_spotify_url, value: playlist[:url] %>
+          <%# This is a good example of someone should audit the views and make sure that your calculations all happen in controllers %>
           <%= f.hidden_field :invite_code, value: SecureRandom.uuid.slice(0,5) %>
           <li> <%= f.submit playlist[:name]%> </li>
         <% end %>
