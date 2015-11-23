@@ -1,7 +1,8 @@
 <div class="invite_form">
   <%= form_tag(setlist_send_invites_path(@setlist), method: :get) do %>
-    <%= label_tag(:send, "Input valid emails:") %>
-    <%= text_area_tag(:send, "buddy@example.com, guy@example.com", size: "40x8") %>
+    <p>To send email invitiations to this Juke, input comma-seperated emails below:</p>
+    <%= text_area_tag(:send, nil, size: "40x8") %>
+    <br>
     <%= submit_tag("Send Invites!") %>
   <%end%>
 </div>
