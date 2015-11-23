@@ -7,11 +7,7 @@ class SetlistsController < ApplicationController
   def new
     @setlist = Setlist.new
     res = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
-    parsed = JSON.parse(res.body)
-    @playlists = []
-    parsed["items"].each do |playlist|
-      @playlists << {name: playlist["name"], url: playlist["href"]}
-    end
+    @playlists = SpotifyGetter.parse_playlists(res)
   end
 
   def edit

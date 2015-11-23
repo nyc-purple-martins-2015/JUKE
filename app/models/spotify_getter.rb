@@ -17,6 +17,13 @@ class SpotifyGetter
     res
   end
 
+  def self.parse_playlists(response)
+    parsed = JSON.parse(response.body)
+    parsed["items"].each_with_object([]) do |playlist, array|
+      array << {name: playlist["name"], url: playlist["href"]}
+    end
+  end
+
   private
 
   def format_endpoint
