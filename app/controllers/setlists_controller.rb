@@ -1,23 +1,16 @@
 class SetlistsController < ApplicationController
 
   def index
-
   end
 
   def new
-    ensure_current_user
     @setlist = Setlist.new
     res = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
-    parsed = JSON.parse(res.body)
-    @playlists = []
-    parsed["items"].each do |playlist|
-      @playlists << {name: playlist["name"], url: playlist["href"]}
-    end
+    @playlists = SpotifyGetter.parse_playlists(res)
   end
 
   def edit
     @setlist = Setlist.find(params[:id])
-    @setlist_songs = @setlist.setlist_songs
   end
 
   def invite
@@ -47,7 +40,6 @@ class SetlistsController < ApplicationController
   end
 
   def create
-    ensure_current_user
 
     if params[:setlist][:new_setlist]
       result =SpotifyNewPlaylistPoster.new(session[:token], { user: current_user, name: params[:setlist][:name] }).post
