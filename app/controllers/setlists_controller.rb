@@ -5,24 +5,39 @@ class SetlistsController < ApplicationController
   end
 
   def new
-    ensure_current_user
-    @setlist = Setlist.new
-    res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
-    parsed = JSON.parse(res.body)
-    @playlists = []
-    parsed["items"].each do |playlist|
-      @playlists << {name: playlist["name"], url: playlist["href"]}
+    if logged_in?
+      ensure_current_user
+      @setlist = Setlist.new
+      res = spotify_get("https://api.spotify.com/v1/users/#{current_user.uid}/playlists")
+      parsed = JSON.parse(res.body)
+      @playlists = []
+      parsed["items"].each do |playlist|
+        @playlists << {name: playlist["name"], url: playlist["href"]}
+      end
+    else
+      flash[:alert] = "Log in to access JUKE"
+      redirect_to root_path
     end
   end
 
   def edit
-    @setlist = Setlist.find(params[:id])
-    @setlist_songs = @setlist.setlist_songs
+    if logged_in?
+      @setlist = Setlist.find(params[:id])
+      @setlist_songs = @setlist.setlist_songs
+    else
+      flash[:alert] = "Log in to access JUKE"
+      redirect_to root_path
+    end
   end
 
   def show
-    @setlist = Setlist.find(params[:id])
-    @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
+    if logged_in?
+      @setlist = Setlist.find(params[:id])
+      @setlist_songs = @setlist.setlist_songs.where(list_status: [0, 1])
+    else
+      flash[:alert] = "Log in to access JUKE"
+      redirect_to root_path
+    end
   end
 
   def update
