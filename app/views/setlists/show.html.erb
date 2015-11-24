@@ -1,6 +1,8 @@
 <div class="showpage_songs_container">
   <ol>
-    <h3> Spotify Playlist </h3>
+    <div class="setlist_title">
+      <h3><%= @setlist.name %></h3>
+    </div>
     <% current_songs = @setlist_songs.where(list_status: 2) %>
     <% current_songs.each do |current_song| %>
       <% song = current_song.song %>
