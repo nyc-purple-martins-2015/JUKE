@@ -1,9 +1,9 @@
 <div class="showpage_songs_container">
   <ol>
     <h3> Spotify Playlist </h3>
-    <% setlist_songs = @setlist_songs.where(list_status: 2) %>
-    <% setlist_songs.each do |setlist_song| %>
-      <% song = setlist_song.song %>
+    <% current_songs = @setlist_songs.where(list_status: 2) %>
+    <% current_songs.each do |current_song| %>
+      <% song = current_song.song %>
       <li><span class="song_name"><%= song.title %></span></li>
 
       <h7 class="song_details">
@@ -13,13 +13,13 @@
 
        <div class="vote_buttons">
           <% if params[:action] == "show" %>
-            <%= render partial: 'votes/new', layout: false, locals: {setlist_song: setlist_song} %>
+            <%= render partial: 'votes/new', layout: false, locals: {setlist_song: current_song} %>
           <% end %>
         </div>
     <% end %>
   </ol>
-  <h3> Pending Songs </h3>
   <ol>
+    <h3> Pending Songs </h3>
     <% pending_songs = @setlist_songs.where(list_status: 0) %>
     <% pending_songs.each do |pending_song| %>
       <% suggested_song = pending_song.song %>
