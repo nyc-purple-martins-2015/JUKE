@@ -16,9 +16,16 @@
   <div class="header">
     <a class="logo" href="/home">JUKE</a>
   <span>
-    <a id="dropdown_button" href="/home"><%=image_tag("Juke-User-Icon.png")%></a>
-  </span>
+  <a id="dropdown_button" href="/home"><%=image_tag("Juke-User-Icon.png")%></a>
+</span>
   </div>
+
+
+<div id="profile_dropdown" class="dropdown-menu">
+      <p>Hello <%=current_user.username%></p>
+  <p><%= link_to "My JUKES", user_path(current_user)%></p>
+  <p><a href="<%= logout_path %>">logout</a></p>
+  <p>(c) 2015 </p>
 </div>
 
 

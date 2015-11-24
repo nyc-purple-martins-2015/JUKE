@@ -8,10 +8,19 @@ body {
 .header {
   position: relative;
   height: 5em;
-  width: 100%;
   background-color: black;
   color: white;
   z-index: 0;
+}
+
+.header a{
+  top: .5em;
+  position: relative;
+  right: 2em;
+  color: white;
+  text-decoration: none;
+}
+
 
 #site_bg {
   position: fixed;
@@ -26,8 +35,47 @@ body {
   top: .5em;
   position: relative;
   right: 2em;
+}
+
+#dropdown_button {
+  position: absolute;
+  top: .5em;
+  left: 92%;
+}
+
+#dropdown_button img{
+  height: 4em;
+}
+
+#profile_dropdown {
+  position: absolute;
+  right: 0;
+  font-family: 'Architects Daughter', cursive;
+  border-left: 2px white solid;
+  border-right: 2px white solid;
+  border-bottom: 2px white solid;
   color: white;
-  text-decoration: none;
+  background-color: black;
+  width: 10em;
+  z-index: 1;
+  display: none;
+}
+
+#profile_dropdown p{
+  position: relative;
+  left: 1em;
+}
+
+#profile_dropdown a{
+  color: white;
+}
+
+#profile_dropdown a:visited{
+  color: white;
+}
+
+#profile_dropdown a:hover{
+  color: gray;
 }
 
 
