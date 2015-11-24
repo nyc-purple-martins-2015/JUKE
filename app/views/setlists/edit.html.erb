@@ -1,11 +1,30 @@
-<div class="invite_button">
-  <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
-</div>
-
-<div class="both_lists">
   <div class="setlist_title">
     <h2><%= @setlist.name %></h2>
   </div>
+
+<div class="invite_button">
+  <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
+</div>
+</br>
+<div class="both_list_links">
+
+  <div id="hide_button">
+      <a href="/home">Hide List</a>
+  </div>
+
+  <div id="current_list_link">
+    <a href="/home">Current List</a>
+  </div>
+  </br>
+  <div id="suggested_list_link">
+    <a href="/home">Suggested Songs</a>
+  </div>
+
+</div>
+
+
+
+<div class="both_lists">
   <div class="current_list_container">
     <ol>
     <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
