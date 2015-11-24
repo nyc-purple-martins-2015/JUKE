@@ -8,6 +8,6 @@ class SpotifyAddTracksToPlaylistPoster < SpotifyPoster
 
   def payload
     song_uris = @args.fetch(:setlist_songs).map{ |setlist_song| "spotify:track:" + setlist_song.song.spotify_id }
-    {  uris: song_uris }
+    { uris: song_uris }
   end
 end
