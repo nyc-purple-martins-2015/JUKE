@@ -13,8 +13,5 @@
   <% end %>
 
   <p>Vote value: <%= SetlistSong.find(setlist_song.id).vote_count %> </p>
-  <% if flash[:alert] %>
-    <%= flash[:alert] %>
-  <% end %>
 </div>
 
