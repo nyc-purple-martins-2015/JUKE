@@ -9,4 +9,8 @@ class SetlistSong < ActiveRecord::Base
     self.votes.sum(:value)
   end
 
+  def get_position_in_playlist(playlist_json)
+    track_item_array = playlist_json["tracks"]["items"]
+    track_item_array.index{ |track_item| track_item["track"]["href"] == song.song_spotify_url }
+  end
 end
