@@ -7,7 +7,7 @@ class Setlist < ActiveRecord::Base
 
   validates_presence_of :host, :name, :invite_code, :list_spotify_url
 
-  def setlist_id
+  def spotify_id
     list_spotify_url.split("/").last
   end
 end

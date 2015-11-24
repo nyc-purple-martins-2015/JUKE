@@ -1,12 +1,15 @@
-class SpotifyAddTrackToPlaylist < SpotifyPoster
+class SpotifyAddTrackToSetlistPoster < SpotifyPoster
 
   private
 
   def format_endpoint
-     BASE_URL + "/v1/users/#{@args.fetch(:user).uid}/playlists/#{@args.fetch(:setlist).setlist_id}/tracks"
+     BASE_URL + "/v1/users/#{@args.fetch(:user).uid}/playlists/#{@args.fetch(:setlist).spotify_id}/tracks"
   end
 
   def payload
-    { urls: @args.fetch(:songs).map(&:song_spotify_url) }
+    # binding.pry
+    {
+      urls: @args.fetch(:setlist_songs).map{ |setlist_song| setlist_song.song.song_spotify_url }
+    }
   end
 end
