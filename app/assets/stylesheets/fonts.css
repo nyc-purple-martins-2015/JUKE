@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'CherryCreamSoda';
+  src: url('/assets/CherryCreamSoda.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontdinerSwanky';
+  src: url('/assets/FontdinerSwanky.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;;
+}

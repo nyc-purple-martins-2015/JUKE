@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   $(document).on("submit", ".search_form #new_search_form form", function(event) {
     event.preventDefault();
-
     $.ajax({
       type: "Post",
       url: "/search",

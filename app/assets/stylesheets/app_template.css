@@ -2,39 +2,7 @@
   display: none;
 }
 
-.songs_container {
-  margin-top: 1em;
-}
 
-.suggested_songs_container {
-  display: inline-block;
-  border: 1px solid black;
-  float: right;
-  margin-right: 15%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding: 2%;
-  height: 45em;
-  width: 30em;
-  overflow-y: auto;
-}
-
-.current_list_container {
-  display: inline-block;
-  border: 1px solid black;
-  float: left;
-  margin-left: 15%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  height: 45em;
-  padding: 2%;
-  width: 30em;
-  overflow-y: auto;
-}
-
-.current_list_container #update_button{
-  display:none;
-}
 
 .song_details {
   font-size: 10pt;
