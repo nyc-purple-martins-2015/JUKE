@@ -1,4 +1,4 @@
-<div class="vote-buttons">
+<div class="vote_buttons">
   <%= form_for @vote do |f| %>
     <%= f.hidden_field :value, :value => 1 %>
     <%= f.hidden_field :setlist_song_id, :value => setlist_song.id %>
@@ -13,5 +13,6 @@
   <% end %>
 
   <p>Vote value: <%= SetlistSong.find(setlist_song.id).vote_count %> </p>
+  <p> ________________________________ </p>
 </div>
 

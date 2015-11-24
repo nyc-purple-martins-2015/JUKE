@@ -2,6 +2,20 @@
   margin-top: 1em;
 }
 
+.new_playlists_body {
+  text-align: center;
+}
+
+#new_playlists_header {
+  text-align: center;
+  position: relative;
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 75px green;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+}
+
 .current_list_container {
   display: inline-block;
   border: 1px solid black;
@@ -13,6 +27,11 @@
   width: 30%;
   float:left;
   overflow-y: auto;
+}
+
+.spotify_playlist_container  {
+  position: relative;
+  right: 3em;
 }
 
 .suggested_songs_container {
@@ -28,6 +47,66 @@
   overflow-y: auto;
 }
 
+.setlist_title h3 {
+  text-align: center;
+  position: relative;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple, 0 0 50px purple, 0 0 75px purple;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.playlists_label {
+  font-family: 'Rock Salt', cursive;
+}
+
+.song_name {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 2em
+}
+
+.song_details {
+  font-size: 1.5em;
+}
+
+.artist_name {
+  font-style: italic;
+}
+
+.album_name {
+  font-weight: bold;
+}
+
+.showpage_songs_container ol {
+  text-align: center;
+}
+
+.search_form form {
+  text-align: center;
+  font-size: 1em;
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  margin: 0 auto;
+  left: 3em;
+  top: 3em;
+  height: 5em;
+  z-index: 0
+}
+
+.song {
+  font-size: 1.5em;
+}
+
+.song_details {
+  font-size: 1em;
+}
+
+.search_form form input {
+  font-size: 1em;
+  text-align: center;
+  background-color: transparent;
+}
 
 .current_list_container #update_button{
   display:none;
