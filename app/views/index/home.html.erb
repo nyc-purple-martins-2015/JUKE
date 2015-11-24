@@ -6,12 +6,6 @@
   <%= button_to "join JUKE", invite_code_path, method: :get, class: "button" %>
 </div>
 
-<div class="join_errors">
-  <% if flash[:alert] %>
-    <%= flash[:alert] %>
-  <% end %>
-</div>
-
 <div class="join_juke_form">
   <%= form_tag join_path, method: :get do %>
   <%= label_tag :invite_code %>

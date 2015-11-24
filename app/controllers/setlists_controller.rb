@@ -65,10 +65,11 @@ class SetlistsController < ApplicationController
 
   def join
     if @setlist = Setlist.find_by(invite_code: params[:invite_code])
+      @guest_list = @setlist.guest_setlists.find_or_create_by(guest: current_user, setlist: @setlist)
       redirect_to setlist_path(@setlist)
     else
       flash[:alert] = "Incorrect Invite Code!"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
 

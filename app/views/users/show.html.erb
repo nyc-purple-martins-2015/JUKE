@@ -11,13 +11,15 @@
   </div>
 
   <div class="my_friends_jukes_on_show_page">
-    <% if !@user.viewable_lists.empty? %>
+    <% if !@user.guest_setlists.empty? %>
       <h3>My Friends Jukes</h3>
       <ul>
-        <% @user.viewable_lists.each do |setlist| %>
-          <li><%= link_to setlist.name, setlist_path(setlist) %></li>
+        <% @user.guest_setlists.each do |guest_list| %>
+          <li><%= link_to guest_list.setlist.name, setlist_path(guest_list.setlist) %></li>
         <% end %>
       </ul>
+    <% else %>
+      <p> You have not joined any Jukes. </p>
     <% end %>
   </div>
 
