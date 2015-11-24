@@ -1,18 +1,3 @@
 .join_juke_form {
   display: none;
 }
-
-
-
-.song_details {
-  font-size: 10pt;
-  /*text-decoration: bolder;*/
-}
-
-.artist_name {
-  font-style: italic;
-}
-
-.album_name {
-  font-weight: bold;
-}
