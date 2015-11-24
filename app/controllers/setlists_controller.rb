@@ -33,9 +33,11 @@ class SetlistsController < ApplicationController
   end
 
   def update
+    binding.pry
     @setlist = Setlist.find(params[:id])
     suggested_songs = []
     params[:setlist_songs].each { |setlist_song_id| suggested_songs << SetlistSong.find_by(id: setlist_song_id)}
+    SpotifyAddTrackToSetlistPoster.new(session[:token], {setlist_songs: suggested_songs, user: current_user })
     suggested_songs.each{|setlist_song| setlist_song.update_attributes(list_status: 2)}
     redirect_to edit_setlist_path
   end
