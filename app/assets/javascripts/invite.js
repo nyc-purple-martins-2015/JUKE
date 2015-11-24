@@ -1,17 +1,18 @@
-// $(document).ready(function() {
+$(document).ready(function(){
+  $(".invite_button").on("submit", ".button_to", function(event){
+    event.preventDefault();
 
-//   $(".invite_button").on("submit", function(event) {
-//      event.preventDefault();
-
-//       var request = $.ajax({
-//       type: "get",
-//       url: "send_invites",
-//       data: $(this).serialize()
-//       })
-
-//       request.done(function(response) {
-//         $(".invite_button").html(response);
-
-//     });
-//   });
-// });
+    if($(".invite_form").is(":visible")){
+      $(".invite_form").remove();
+    }
+    else {
+      var request = $.ajax({
+        type: "get",
+        url: "invite",
+      });
+      request.done(function(response){
+        $(".invite_button").append(response);
+      })
+    }
+  });
+});
