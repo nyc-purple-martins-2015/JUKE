@@ -7,9 +7,7 @@ class SpotifyAddTrackToSetlistPoster < SpotifyPoster
   end
 
   def payload
-    # binding.pry
-    {
-      urls: @args.fetch(:setlist_songs).map{ |setlist_song| setlist_song.song.song_spotify_url }
-    }
+    song_uris = @args.fetch(:setlist_songs).map{ |setlist_song| "spotify:track:" + setlist_song.song.spotify_id }
+    {  uris: song_uris }
   end
 end

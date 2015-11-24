@@ -6,4 +6,5 @@ class Song < ActiveRecord::Base
 
   def spotify_id
     song_spotify_url.split("/").last
+  end
 end
