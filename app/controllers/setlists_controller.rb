@@ -27,6 +27,7 @@ class SetlistsController < ApplicationController
   end
 
   def show
+    @vote = Vote.new
     @setlist = Setlist.find(params[:id])
     @setlist_songs = @setlist.setlist_songs
   end

@@ -15,15 +15,10 @@
         <span class="artist_name"><%= song.artist %></span> |
         <span class="album_name"><%= song.album %></span>
       </h7>
-
-      <div class="vote_buttons">
-        <% if params[:action] == "show" %>
-          <%= render partial: 'votes/new', layout: false, locals: {setlist_song: setlist_song} %>
-        <% end %>
-      </div>
     <% end %>
+
     <div id="update_button">
-    <% if params[:action] == "edit" && hide_update? %>
+    <% if params[:action] == "edit" && hide_update?%>
       <%= f.submit "Update!" %>
     <% end %>
     </div>
