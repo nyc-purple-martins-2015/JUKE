@@ -15,13 +15,17 @@
 <div class="wrapper" id="header_container">
   <div class="header">
     <a class="logo" href="/home">JUKE</a>
-    <% if logged_in? %>
-      <p id="hello_sign">Hello <%=current_user.username%></p>
-      <a class="login_and_logout" href="<%= logout_path %>">logout</a>
-    <% else %>
-      <a class="login_and_logout" href="<%= login_path %>">login</a>
-    <% end %>
+  <span>
+  <a id="dropdown_button" href="/home"><%=image_tag("Juke-User-Icon.png")%></a>
+</span>
   </div>
+
+
+<div id="profile_dropdown" class="dropdown-menu">
+      <p>Hello <%=current_user.username%></p>
+  <p><%= link_to "My JUKES", user_path(current_user)%></p>
+  <p><a href="<%= logout_path %>">logout</a></p>
+  <p>(c) 2015 </p>
 </div>
 
 <div class="flash_container">
@@ -31,16 +35,6 @@
 </div>
 
 <%= yield %>
-
-<div class= "footer">
-<span>Copyright (c) 2015 </span>
-
-<span>|</span>
-
-<span class="footer_juke_link">
-    <%= link_to "My JUKES", user_path(current_user)%>
-</span>
-</div>
 
 </body>
 </html>
