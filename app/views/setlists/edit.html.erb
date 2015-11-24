@@ -2,8 +2,8 @@
   <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
 </div>
 
-<div class="button_to_player_page">
-  <%= button_to "Play Juke", player_path(@setlist), method: :get, :target => :_blank %>
+<div class="link_to_player_page">
+  <%= link_to "Play Juke", player_path(@setlist), method: :get, :target => " _blank" %>
 </div>
 
 <div class="both_lists">
