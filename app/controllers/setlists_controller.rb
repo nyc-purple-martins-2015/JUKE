@@ -83,6 +83,8 @@ class SetlistsController < ApplicationController
 
   def player
     @setlist = Setlist.find(params[:setlist_id])
+    @playlist = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
+    @playlist.format_endpoint
   end
 
   private
