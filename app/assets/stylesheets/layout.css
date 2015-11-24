@@ -8,9 +8,18 @@ body {
 .header {
   position: relative;
   height: 5em;
+  width: 100%;
   background-color: black;
   color: white;
-  z-index: 0
+  z-index: 0;
+
+#site_bg {
+  position: fixed;
+  top: -5em;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
 .header a{
