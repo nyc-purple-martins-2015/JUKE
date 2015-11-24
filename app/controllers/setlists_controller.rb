@@ -71,6 +71,12 @@ class SetlistsController < ApplicationController
     end
   end
 
+  def reorder
+    @setlist = Setlist.find(params[:id])
+    SpotifyReorderPutter.new(session[:token], {user: current_user, setlist: @setlist, request_type: "put", range_start: 14, insert_before: 0, range_length: 1}).post
+    redirect_to setlist_path(@setlist)
+  end
+
   private
 
 # we need a validation of some kind on the url...all setlists
