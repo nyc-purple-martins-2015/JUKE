@@ -1,4 +1,4 @@
-class SpotifySearcher <SpotifyGetter
+class SpotifySearcher < SpotifyGetter
 
 BASE_URL = "https://api.spotify.com"
 
