@@ -10,7 +10,9 @@ class SpotifyPoster
   def post
     uri = URI(format_endpoint)
     http = Net::HTTP.new(uri.host, uri.port)
-    req = Net::HTTP::Post.new(uri)
+
+    req = create_request(uri)
+
     req['Authorization'] = "Bearer #{@token}"
     req['Content-Type'] = "application/json"
     req.body = payload.to_json
@@ -21,6 +23,14 @@ class SpotifyPoster
   end
 
   private
+
+  def create_request(uri)
+    if @args[:request_type] == "put"
+      Net::HTTP::Put.new(uri)
+    else
+      Net::HTTP::Post.new(uri)
+    end
+  end
 
   def format_endpoint
 
