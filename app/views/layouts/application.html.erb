@@ -11,15 +11,22 @@
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Orbitron|Quicksand|Righteous|Architects+Daughter|Gloria+Hallelujah|Sanchez|Covered+By+Your+Grace|Coming+Soon|Rock+Salt' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<aside id="site_bg"><%=image_tag("bluebg1.jpg")%></aside>
 <div class="wrapper" id="header_container">
   <div class="header">
     <a class="logo" href="/home">JUKE</a>
-    <% if logged_in? %>
-      <a class="login_and_logout" href="<%= logout_path %>">logout</a>
-    <% else %>
-      <a class="login_and_logout" href="<%= login_path %>">login</a>
-    <% end %>
+  <span>
+  <a id="dropdown_button" href="/home"><%=image_tag("Juke-User-Icon.png")%></a>
+</span>
   </div>
+</div>
+
+
+<div id="profile_dropdown" class="dropdown-menu">
+      <p>Hello <%=current_user.username%></p>
+  <p><%= link_to "My JUKES", user_path(current_user)%></p>
+  <p><a href="<%= logout_path %>">logout</a></p>
+  <p>(c) 2015 </p>
 </div>
 
 <div class="flash_container">
@@ -29,10 +36,6 @@
 </div>
 
 <%= yield %>
-
-<div class= "footer">
-<p>Copyright (c) 2015</p>
-</div>
 
 </body>
 </html>

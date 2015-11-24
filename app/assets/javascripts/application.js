@@ -18,10 +18,9 @@ $(document).ready(function() {
 
 
 // JQuery the invite code input form:
-  $(".join_juke_button").on("submit", function(event){
+  $("#join_juke_button").on("click", function(event){
     event.preventDefault()
     $( ".join_juke_form" ).toggle();
-    $(".join_juke_button").hide();
   });
 
 });

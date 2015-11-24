@@ -1,0 +1,80 @@
+.invite_button {
+  position: relative;
+  text-align: center;
+  left: 37%;
+  width: 12em;
+  border: 1px black solid;
+  border-radius: 10px;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 2em;
+}
+
+.setlist_title {
+  text-align: center;
+  position: relative;
+  top: -.5em;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+  margin-bottom: -1em
+}
+
+.current_list_container {
+  display: none;
+}
+
+.suggested_songs_container {
+  display: none;
+}
+
+.both_list_links {
+  position: relative;
+  text-align: center;
+  top: 1em;
+  left: 40%;
+  width: 12em;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.5em;
+}
+
+.both_list_links a {
+  text-decoration: none;
+  color: black;
+}
+
+.both_list_links a:visited {
+  color: black;
+}
+
+#current_list_link {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 17.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  right: 2.5em;
+
+}
+
+#suggested_list_link {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 17.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  right: 2.5em;
+}
+
+#hide_button {
+  position: relative;
+  top: -2em;
+  width: 17.3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  right: 2.5em;
+  display: none;
+}
