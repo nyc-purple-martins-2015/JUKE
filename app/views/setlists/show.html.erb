@@ -22,11 +22,11 @@
   <ol>
     <% pending_songs = @setlist_songs.where(list_status: 0) %>
     <% pending_songs.each do |pending_song| %>
-        <% suggested_song = pending_song.song %>
+      <% suggested_song = pending_song.song %>
       <li>
         <%= suggested_song.title %>
       </li>
-       <h7 class="song_details">
+      <h7 class="song_details">
         <span class="artist_name"><%= suggested_song.artist %></span> |
         <span class="album_name"><%= suggested_song.album %></span>
       </h7>
