@@ -83,9 +83,6 @@ class SetlistsController < ApplicationController
 
   def player
     @setlist = Setlist.find(params[:setlist_id])
-    res = SpotifyPlaylistsGetter.new(session[:token], user: current_user).get
-    @playlists = SpotifyGetter.parse_playlists(res)
-    # binding.pry
   end
 
   private
