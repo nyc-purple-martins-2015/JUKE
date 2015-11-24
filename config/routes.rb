@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'invite_code' => 'setlists#invite_code'
   get 'join' => 'setlists#join'
+  get 'player' => 'setlists#player'
 
   resources :playlists, only: [:index, :show, :create]
   resources :users

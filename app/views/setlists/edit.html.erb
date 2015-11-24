@@ -2,10 +2,15 @@
   <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
 </div>
 
+<div class="button_to_player_page">
+  <%= button_to "Play Juke", player_path(@setlist), method: :get %>
+</div>
+
 <div class="both_lists">
   <div class="setlist_title">
     <h2><%= @setlist.name %></h2>
   </div>
+
   <div class="current_list_container">
     <ol>
     <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
