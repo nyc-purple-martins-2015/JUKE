@@ -9,7 +9,6 @@ $(document).ready(function(){
       var request = $.ajax({
         type: "get",
         url: "invite",
-        data: $(this).serialize()
       });
       request.done(function(response){
         $(".invite_button").append(response);
