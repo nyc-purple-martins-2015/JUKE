@@ -17,15 +17,17 @@
 }
 
 .current_list_container {
-  display: inline-block;
-  border: 1px solid black;
+  position: relative;
+  top: -4em;
+  font-family: 'Architects Daughter', cursive;
+  left: 18%;
+  display: none;
   margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 2%;
   height: 40em;
   width: 30%;
-  float:left;
   overflow-y: auto;
 }
 
@@ -35,15 +37,17 @@
 }
 
 .suggested_songs_container {
-  display: inline-block;
-  border: 1px solid black;
+  position: relative;
+  top: -4em;
+  font-family: 'Architects Daughter', cursive;
+  left: 33%;
+  display: none;
   margin-right: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 2%;
   height: 40em;
   width: 30%;
-  float: right;
   overflow-y: auto;
 }
 
