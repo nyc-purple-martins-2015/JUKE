@@ -81,6 +81,10 @@ class SetlistsController < ApplicationController
     redirect_to setlist_path(@setlist)
   end
 
+  def player
+    @setlist = Setlist.find(params[:setlist_id])
+  end
+
   private
 
 # we need a validation of some kind on the url...all setlists

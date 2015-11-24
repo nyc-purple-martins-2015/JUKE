@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   resources :setlists do
     get 'invite' => 'setlists#invite'
     get 'send_invites' => 'setlists#send_invites'
+    get 'player' => 'setlists#player'
   end
 
   get 'invite_code' => 'setlists#invite_code'
   get 'join' => 'setlists#join'
-  get 'player' => 'setlists#player'
 
   resources :playlists, only: [:index, :show, :create]
   resources :users
