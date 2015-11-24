@@ -11,10 +11,12 @@
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Orbitron|Quicksand|Righteous|Architects+Daughter|Gloria+Hallelujah|Sanchez|Covered+By+Your+Grace|Coming+Soon|Rock+Salt' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<aside id="site_bg"><%=image_tag("bluebg1.jpg")%></aside>
 <div class="wrapper" id="header_container">
   <div class="header">
     <a class="logo" href="/home">JUKE</a>
     <% if logged_in? %>
+      <p id="hello_sign">Hello <%=current_user.username%></p>
       <a class="login_and_logout" href="<%= logout_path %>">logout</a>
     <% else %>
       <a class="login_and_logout" href="<%= login_path %>">login</a>
@@ -31,7 +33,13 @@
 <%= yield %>
 
 <div class= "footer">
-<p>Copyright (c) 2015</p>
+<span>Copyright (c) 2015 </span>
+
+<span>|</span>
+
+<span class="footer_juke_link">
+    <%= link_to "My JUKES", user_path(current_user)%>
+</span>
 </div>
 
 </body>

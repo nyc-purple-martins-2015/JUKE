@@ -68,7 +68,7 @@ class SetlistsController < ApplicationController
       redirect_to setlist_path(@setlist)
     else
       flash[:alert] = "Incorrect Invite Code!"
-      redirect_to root_path
+      redirect_to home_path
     end
   end
 
