@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
+describe SessionsController do
 
   before do
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:spotify]
   end
 
-    it "#new" do
+  describe "#new" do
+    it "assigns a new user" do
       get :new
       expect(assigns(:user)).to be_a_kind_of(User)
     end
+  end
 
   describe "#create" do
     it "should successfully create a user" do
