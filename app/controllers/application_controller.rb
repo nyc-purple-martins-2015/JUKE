@@ -23,42 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   #This should be removed when jon is ready
-  def spotify_post(endpoint_url, hash_of_params)
-    uri = URI(endpoint_url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri)
-    request.set_form_data(hash_of_params)
-    response = http.request(request)
-  end
-  ##########
 
-
-  #This should be removed when jon is ready
-  def search_url(query_array, type)
-    altered_query = query_array.split(" ").join("%20")
-    "https://api.spotify.com/v1/search?q=#{altered_query}&limit=20&type=#{type}"
-  end
-  ############
-
-  #This should be removed when jon is ready
-  def get_setlist_tracks(setlist)
-    json = SpotifyPlaylistGetter.new(session[:token], setlist: setlist).get
-    parsed = JSON.parse(json.body)
-    t_array = parsed["tracks"]["items"]
-
-    tracks = t_array.map do |t|
-      artist_list = []
-      t["track"]["artists"].each { |artist| artist_list << artist["name"] }
-      {
-        title: t["track"]["name"],
-        song_spotify_url: t["track"]["href"],
-        album: t["track"]["album"]["name"],
-        artist: artist_list.join(", ")
-      }
-    end
-
-    tracks
-  end
   ################
 
   def parse_emails(string)
