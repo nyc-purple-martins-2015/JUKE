@@ -16,7 +16,7 @@
 
 .both_lists {
   position: relative;
-  top: -10em;
+  top: -8em;
 }
 
 .current_list_container {
@@ -70,12 +70,12 @@
 #hide_button {
   font-size: 2em;
   position: relative;
-  right: 2em;
-  top: -3em;
+  bottom: 2em;
   width: 17.3em;
   padding-top: 1em;
   padding-bottom: 1em;
   display: none;
+  z-index: 1
 }
 
 #invite_submit_button {
@@ -86,4 +86,26 @@
 #edit_setlist_title {
 position: relative;
 left: 2em;
+}
+
+.link_to_player_page {
+  position: absolute;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.5em;
+  left: 2em;
+  top: -3.5em;
+}
+
+.link_to_player_page a{
+  color: white;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+   text-decoration: none;
+}
+
+.link_to_player_page a:hover{
+  color: black;
 }

@@ -8,10 +8,6 @@
     <%= link_to "Reorder Juke", setlist_reorder_path(@setlist) %>
   </div>
 
-  <div id="hide_button">
-    <a href="/home">X</a>
-  </div>
-
   <div>
     <div class="setlist_title" id="edit_setlist_title">
       <h2><%= @setlist.name %></h2>
@@ -39,6 +35,9 @@
   </div>
 
   <div class="both_lists">
+    <div id="hide_button">
+        <a href="/home">X</a>
+    </div>
     <div class="current_list_container">
       <ol>
       <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>

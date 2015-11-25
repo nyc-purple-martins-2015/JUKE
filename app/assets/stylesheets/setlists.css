@@ -25,11 +25,12 @@
   position: relative;
   top: -4em;
   font-family: 'Architects Daughter', cursive;
-  left: 18%;
   display: none;
+  left: 8%;
   margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 40em;
   padding: 2%;
   height: 40em;
   overflow-y: auto;
@@ -53,11 +54,12 @@
   position: relative;
   top: -4em;
   font-family: 'Architects Daughter', cursive;
-  left: 33%;
+  left: 8%;
   display: none;
   margin-right: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 40em;
   padding: 2%;
   height: 40em;
   overflow-y: auto;
