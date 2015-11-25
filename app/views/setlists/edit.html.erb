@@ -8,6 +8,15 @@
 </br>
 <div class="both_list_links">
 
+<div class="link_to_player_page">
+  <%= link_to "Play Juke", setlist_player_path(@setlist), method: :get, :target => " _blank" %>
+</div>
+
+<div class="both_lists">
+  <div class="setlist_title">
+    <h2><%= @setlist.name %></h2>
+  </div>
+
   <div id="hide_button">
       <a href="/home">Hide List</a>
   </div>
@@ -25,6 +34,7 @@
 
 
 <div class="both_lists">
+
   <div class="current_list_container">
     <ol>
     <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
