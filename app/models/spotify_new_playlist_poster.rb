@@ -1,6 +1,5 @@
 class SpotifyNewPlaylistPoster < SpotifyPoster
 
-
   private
 
   def format_endpoint

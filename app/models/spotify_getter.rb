@@ -1,4 +1,5 @@
 class SpotifyGetter
+  extend Parsable
 
   BASE_URL = "https://api.spotify.com"
 
