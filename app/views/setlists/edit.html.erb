@@ -21,6 +21,7 @@
       <a href="/home">Hide List</a>
   </div>
 
+
   <div id="current_list_link">
     <a href="/home">Current List</a>
   </div>
@@ -34,14 +35,21 @@
 
 
 <div class="both_lists">
-
   <div class="current_list_container">
-    <ol>
-    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
-    </ol>
+    <% if !@setlist.setlist_songs.where(list_status: 2).empty? %>
+      <ol>
+      <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
+      </ol>
+    <% else %>
+      <p>Nothing on the current list. Invite friends to join your Juke and add songs!</p>
+    <% end %>
   </div>
 
   <div class="suggested_songs_container">
-    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+    <% if !@setlist.setlist_songs.where(list_status: [0, 1]).empty? %>
+      <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+    <% else %>
+      <p>Nothing on suggested song list. Invite friends to join your Juke and add songs!</p>
+    <% end %>
   </div>
 </div>
