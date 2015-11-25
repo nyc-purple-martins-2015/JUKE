@@ -1,5 +1,4 @@
-!["https://circleci.com/gh/:owner/:repo/tree/:branch.svg?style=shield&circle-token=:circle-token"]
-
+!['circlestatus'](https://circleci.com/gh/nyc-purple-martins-2015/JUKE.svg?style=shield&circle-token=:circle-token)
 
 == README
 
