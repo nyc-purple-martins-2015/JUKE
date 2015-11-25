@@ -7,7 +7,7 @@
         <div class="spotify_playlist_container">
         <%= form_for(@setlist) do |f| %>
           <%= f.hidden_field :name, value: playlist[:name] %>
-          <%= f.hidden_field :list_spotify_url, value: playlist[:url] %>
+          <%= f.hidden_field :spotify_url, value: playlist[:url] %>
           <%= f.hidden_field :invite_code, value: SecureRandom.uuid.slice(0,5) %>
           <ul> <%= f.submit playlist[:name]%> </ul>
         <% end %>

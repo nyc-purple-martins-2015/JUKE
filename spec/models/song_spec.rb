@@ -5,6 +5,6 @@ RSpec.describe Song, type: :model do
     it { should validate_presence_of :title}
     it { should validate_presence_of :artist}
     it { should validate_presence_of :album}
-    it { should validate_presence_of :song_spotify_url}
+    it { should validate_presence_of :spotify_url}
   end
 end

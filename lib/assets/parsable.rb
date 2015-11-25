@@ -34,12 +34,11 @@ module Parsable
       t["track"]["artists"].each { |artist| artist_list << artist["name"] }
       {
         title: t["track"]["name"],
-        song_spotify_url: t["track"]["href"],
+        spotify_url: t["track"]["href"],
         album: t["track"]["album"]["name"],
         artist: artist_list.join(", ")
       }
     end
-
     tracks
   end
 
