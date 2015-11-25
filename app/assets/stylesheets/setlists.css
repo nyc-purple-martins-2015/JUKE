@@ -1,9 +1,14 @@
+.join_juke_form {
+  display: none;
+}
+
 .songs_container {
   margin-top: 1em;
 }
 
 .new_playlists_body {
   text-align: center;
+  font-size: 1.5em;
 }
 
 #new_playlists_header {
@@ -11,7 +16,7 @@
   position: relative;
   font-size: 2em;
   color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 75px green;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
   letter-spacing: 5px;
   font-family: 'Rock Salt', cursive;
 }
@@ -20,49 +25,78 @@
   position: relative;
   top: -4em;
   font-family: 'Architects Daughter', cursive;
-  left: 18%;
   display: none;
+  left: 8%;
   margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 40em;
   padding: 2%;
   height: 40em;
-  width: 30%;
   overflow-y: auto;
 }
 
 .spotify_playlist_container  {
   position: relative;
-  right: 3em;
+  right: 2em;
+}
+
+.spotify_playlist_container ul span {
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+.spotify_playlist_container ul span input:hover {
+  color: #ff2d95;
 }
 
 .suggested_songs_container {
   position: relative;
   top: -4em;
   font-family: 'Architects Daughter', cursive;
-  left: 33%;
+  left: 8%;
   display: none;
   margin-right: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
+  width: 40em;
   padding: 2%;
   height: 40em;
-  width: 30%;
   overflow-y: auto;
 }
 
-.setlist_title h3 {
+.setlist_title {
   text-align: center;
   position: relative;
-  font-size: 3em;
+  top: -.5em;
+  font-size: 1.5em;
+  left: .5em;
   color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple, 0 0 50px purple, 0 0 75px purple;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
   letter-spacing: 5px;
   font-family: 'Rock Salt', cursive;
+  margin-bottom: -2em;
+}
+
+#pending_setlist_title {
+  padding-bottom: 1em;
+}
+
+#show_setlist_name {
+  font-size: 3em;
 }
 
 .playlists_label {
   font-family: 'Rock Salt', cursive;
+}
+
+.create_setlist_form form input{
+  font-size: 1em;
+  background-color: transparent;
+}
+
+.create_setlist_form form input:hover {
+  color: #ff2d95;
 }
 
 .song_name {
@@ -72,6 +106,7 @@
 
 .song_details {
   font-size: 1.5em;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .artist_name {
@@ -98,8 +133,24 @@
   z-index: 0
 }
 
+#create_submit_button {
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
+#show_partial_list li{
+  margin-top: 1em;
+}
+
+#show_partial_list .song {
+  border: none;
+}
+
 .song {
   font-size: 1.5em;
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: .1em .3em .1em .3em;
 }
 
 .song_details {
@@ -119,4 +170,10 @@
 .list_title {
   text-align: center;
   text-decoration: underline;
+}
+
+.vote_button {
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: .1em .3em .1em .3em;
 }

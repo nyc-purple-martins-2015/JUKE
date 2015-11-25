@@ -15,3 +15,22 @@
   font-size: 1.5em;
   text-align: center;
 }
+
+.showpage_users_container ul a{
+  color: black;
+  border: black 1px solid;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: .1em .3em .1em .3em;
+}
+
+.showpage_users_container ul li{
+  margin: 1em;
+}
+
+.showpage_users_container ul a:visited{
+  color: black;
+  border: black 1px solid;
+  border-radius: 10px;
+  text-decoration: none;
+}

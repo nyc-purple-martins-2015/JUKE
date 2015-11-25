@@ -1,11 +1,12 @@
 <div class="showpage_songs_container">
 
+  <div class="setlist_title" id="show_setlist_name">
+    <h3><%= @setlist.name %></h3>
+  </div>
+
   <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
 
   <ol>
-    <div class="setlist_title">
-      <h3><%= @setlist.name %></h3>
-    </div>
     <% @setlist.sort_by_votecount(2).each do |current_song| %>
       <% song = current_song.song %>
       <ul>
@@ -19,16 +20,18 @@
       </br>
       </h7>
 
-       <div class="vote_buttons">
-          <% if params[:action] == "show" %>
-            <%= render partial: 'votes/new', layout: false, locals: {setlist_song: current_song} %>
-          <% end %>
-        </div>
+      <div class="vote_buttons">
+        <% if params[:action] == "show" %>
+          <%= render partial: 'votes/new', layout: false, locals: {setlist_song: current_song} %>
+        <% end %>
+      </div>
     <% end %>
   </ol>
-</br>
+
+  </br>
+
   <ol>
-    <div class="setlist_title">
+    <div class="setlist_title" id="pending_setlist_title">
       <h3> Pending Songs </h3>
     </div>
     <% @setlist.sort_by_votecount([0, 1]).each do |pending_song| %>
