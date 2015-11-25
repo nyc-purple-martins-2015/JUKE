@@ -41,7 +41,7 @@
 
   <div class="current_list_container">
     <ol>
-    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
+    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>
     </ol>
   </div>
 
