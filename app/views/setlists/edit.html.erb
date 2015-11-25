@@ -46,6 +46,6 @@
   </div>
 
   <div class="suggested_songs_container">
-    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.sort_by_votecount([0, 1])} %>
   </div>
 </div>
