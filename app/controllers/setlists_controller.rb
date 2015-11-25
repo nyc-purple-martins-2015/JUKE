@@ -46,16 +46,11 @@ class SetlistsController < ApplicationController
     if params[:setlist][:new_setlist]
       result =SpotifyNewPlaylistPoster.new(session[:token], { user: current_user, name: params[:setlist][:name] }).post
     end
-
     setlist = Setlist.new(setlist_params)
     if setlist.save
-      array_of_tracks_hash = get_setlist_tracks(setlist)
-      tracks_not_loaded = []
-      array_of_tracks_hash.each do |track_hash|
-        song = Song.find_or_create_by(track_hash)
-        setlist_song = SetlistSong.new(setlist: setlist, song: song, list_status: 2)
-        tracks_not_loaded << setlist_song.title unless setlist_song.save
-      end
+      json = SpotifyPlaylistGetter.new(session[:token], setlist: setlist).get
+      array_of_tracks_hash = SpotifyGetter.parse_playlist(json)
+      setlist.tracks_from_setlist(array_of_tracks_hash)
       redirect_to edit_setlist_path(setlist)
     else
       flash[:alert] = "I'm sorry but we were unable to use that setlist"
