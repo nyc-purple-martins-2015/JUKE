@@ -44,11 +44,19 @@
     </div>
     <div class="current_list_container">
       <ol>
-      <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>
+        <% if !@setlist.sort_by_votecount([2]).empty? %>
+          <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>
+        <% else %>
+          <h2>Invite friends to join this juke to suggest songs</h2>
+        <% end %>
       </ol>
     </div>
     <div class="suggested_songs_container">
-      <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.sort_by_votecount([0, 1])} %>
+      <% if !@setlist.sort_by_votecount([0, 1]).empty? %>
+        <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.sort_by_votecount([0, 1])} %>
+      <% else %>
+        <h2>Invite friends to join this Juke and suggest songs</h2>
+      <% end %>
     </div>
   </div>
 
