@@ -7,7 +7,7 @@ module Parsable
     end
   end
 
-  def self.parse_search_results(response)
+  def parse_search_results(response)
     parsed = JSON.parse(response.body)
     t_array = parsed["tracks"]["items"]
     results = t_array.map do |t|
@@ -24,4 +24,23 @@ module Parsable
     end
     results
   end
+
+  def parse_playlist(json)
+    parsed = JSON.parse(json.body)
+    t_array = parsed["tracks"]["items"]
+
+    tracks = t_array.map do |t|
+      artist_list = []
+      t["track"]["artists"].each { |artist| artist_list << artist["name"] }
+      {
+        title: t["track"]["name"],
+        song_spotify_url: t["track"]["href"],
+        album: t["track"]["album"]["name"],
+        artist: artist_list.join(", ")
+      }
+    end
+
+    tracks
+  end
+
 end
