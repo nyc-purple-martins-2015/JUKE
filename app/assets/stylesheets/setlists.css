@@ -45,6 +45,10 @@
   border-radius: 10px;
 }
 
+.spotify_playlist_container ul span input:hover {
+  color: #ff2d95;
+}
+
 .suggested_songs_container {
   position: relative;
   top: -4em;
@@ -87,6 +91,10 @@
 .create_setlist_form form input{
   font-size: 1em;
   background-color: transparent;
+}
+
+.create_setlist_form form input:hover {
+  color: #ff2d95;
 }
 
 .song_name {

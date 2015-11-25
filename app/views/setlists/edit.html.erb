@@ -13,27 +13,28 @@
       <a href="/home">X</a>
   </div>
 
-  <div class="both_list_links">
-    <div class="setlist_title" id="edit_setlist_container">
+  <div>
+    <div class="setlist_title" id="edit_setlist_title">
       <h2><%= @setlist.name %></h2>
     </div>
+    <div class="both_list_links">
+      <div class="invite_button">
+        <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
+      </div>
 
-    <div class="invite_button">
-      <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
-    </div>
+      </br>
 
-    </br>
+      <div id="hide_button">
+          <a href="/home">X</a>
+      </div>
 
-    <div id="hide_button">
-        <a href="/home">X</a>
-    </div>
-
-    <div id="current_list_link">
-      <a href="/home">Current List</a>
-    </div>
-    </br>
-    <div id="suggested_list_link">
-      <a href="/home">Suggested Songs</a>
+      <div id="current_list_link">
+        <a href="/home">Current List</a>
+      </div>
+      </br>
+      <div id="suggested_list_link">
+        <a href="/home">Suggested Songs</a>
+      </div>
     </div>
   </div>
 
