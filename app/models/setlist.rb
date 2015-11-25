@@ -10,4 +10,8 @@ class Setlist < ActiveRecord::Base
   def spotify_id
     list_spotify_url.split("/").last
   end
+
+  def sort_by_votecount
+    setlist_songs.sort_by { |setlist_song| -1 * setlist_song.count_vote_total }
+  end
 end

@@ -77,7 +77,9 @@ class SetlistsController < ApplicationController
     @setlist = Setlist.find(params[:id])
     response = SpotifyPlaylistGetter.new(session[:token], setlist: @setlist).get
     json = JSON.parse(response.body)
-    # SpotifyReorderPutter.new(session[:token], {user: current_user, setlist: @setlist, request_type: "put", range_start: 14, insert_before: 0, range_length: 1}).post
+    sorted_setlist = @setlist.sort_by_votecount
+    deleter = SpotifyTracksDeleter.new(session[:token], {request_type: "delete", setlist_songs: sorted_setlist, user: current_user, setlist: @setlist}).post
+    poster = SpotifyAddTracksToPlaylistPoster.new(session[:token], {setlist: @setlist, setlist_songs: sorted_setlist, user: current_user }).post
     redirect_to setlist_path(@setlist)
   end
 

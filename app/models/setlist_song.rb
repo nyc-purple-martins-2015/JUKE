@@ -18,4 +18,9 @@ class SetlistSong < ActiveRecord::Base
     pos = get_position_in_playlist(playlist_json)
     SpotifyReorderPutter.new(token, { user: user, setlist: setlist, request_type: "put", range_start: pos, insert_before: 0, range_length: 1 }).post
   end
+
+  def count_vote_total
+    return 0 if votes.count == 0
+    votes.map(&:value).reduce(:+)
+  end
 end
