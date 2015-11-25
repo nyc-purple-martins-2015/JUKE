@@ -18,7 +18,7 @@
           <%= hidden_field_tag 'setlist_id', setlist_id%>
           <span class="song"><%=f.submit song[:title] %></span>
           <h7 class="song_details">
-            <span class="artist_name">| <%= song[:artist] %></span> |
+            | <span class="artist_name"> <%= song[:artist] %></span> |
             <span class="album_name"><%= song[:album] %></span>
           </h7>
         </div>

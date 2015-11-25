@@ -1,4 +1,5 @@
 <div class="new_playlists_body">
+
   <h2 id="new_playlists_header">Create a New Playlist</h2>
   <h3 class="playlists_label">Import from Spotify</h3>
   <div class="spotify_playlists_container">
@@ -9,7 +10,7 @@
           <%= f.hidden_field :name, value: playlist[:name] %>
           <%= f.hidden_field :list_spotify_url, value: playlist[:url] %>
           <%= f.hidden_field :invite_code, value: SecureRandom.uuid.slice(0,5) %>
-          <ul> <%= f.submit playlist[:name]%> </ul>
+          <ul> <span><%= f.submit playlist[:name]%></span> </ul>
         <% end %>
         </div>
       <% end %>
@@ -21,7 +22,9 @@
     <%= form_for @setlist do |f| %>
       <%= f.text_field :name %>
       <%= f.hidden_field :new_setlist, value: true %>
-      <%= f.submit %>
+      <span id="create_submit_button">
+      <%= f.submit "Create" %>
+    </span>
     <% end %>
   </div>
 
