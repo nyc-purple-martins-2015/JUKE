@@ -53,7 +53,6 @@ class SetlistsController < ApplicationController
       setlist.tracks_from_setlist(array_of_tracks_hash)
       redirect_to edit_setlist_path(setlist)
     else
-      flash[:alert] = "I'm sorry but we were unable to use that setlist"
       redirect_to new_setlist_path
     end
   end
@@ -84,8 +83,6 @@ class SetlistsController < ApplicationController
 
   private
 
-# we need a validation of some kind on the url...all setlists
-# should be forced to have a valid spotify_url that attaches to spotify
   def setlist_params
     params.require(:setlist).permit(:name, :spotify_url, :invite_code).merge(host: current_user)
   end
