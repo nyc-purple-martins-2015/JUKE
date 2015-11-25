@@ -1,5 +1,8 @@
 class SpotifyPlaylistGetter < SpotifyGetter
 
+
+
+
   private
 
   def format_endpoint

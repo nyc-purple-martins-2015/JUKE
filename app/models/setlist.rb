@@ -7,6 +7,15 @@ class Setlist < ActiveRecord::Base
 
   validates_presence_of :host, :name, :invite_code, :list_spotify_url
 
+  def load_tracks(array_of_tracks_hash)
+    tracks_not_loaded = []
+    array_of_tracks_hash.each do |track_hash|
+      song = Song.find_or_create_by(track_hash)
+      setlist_song = setlist_songs.new(song: song, list_status: 2)
+      tracks_not_loaded << setlist_song.title unless setlist_song.save
+    end
+  end
+
   def spotify_id
     list_spotify_url.split("/").last
   end
