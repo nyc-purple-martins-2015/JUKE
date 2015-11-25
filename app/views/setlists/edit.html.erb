@@ -35,21 +35,21 @@
 
 
 <div class="both_lists">
-  <% if !@setlist.setlist_songs.where(list_status: 2).empty? %>
-    <div class="current_list_container">
+  <div class="current_list_container">
+    <% if !@setlist.setlist_songs.where(list_status: 2).empty? %>
       <ol>
       <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
       </ol>
-    </div>
-  <% else %>
-    <p>nothing to show on current list</p>
-  <% end %>
+    <% else %>
+      <p>Nothing on the current list. Invite friends to join your juke and add songs!</p>
+    <% end %>
+  </div>
 
-  <% if !@setlist.setlist_songs.where(list_status: [0, 1]).empty? %>
-    <div class="suggested_songs_container">
+  <div class="suggested_songs_container">
+    <% if !@setlist.setlist_songs.where(list_status: [0, 1]).empty? %>
       <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
-    </div>
-  <% else %>
-    <p>nothing to show on suggested song list</p>
-  <% end %>
+    <% else %>
+      <p>Nothing on suggested song list. Invite friends to join your juke and add songs!</p>
+    <% end %>
+  </div>
 </div>
