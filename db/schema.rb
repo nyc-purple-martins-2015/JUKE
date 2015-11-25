@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120021128) do
+ActiveRecord::Schema.define(version: 20151125162727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,21 +32,21 @@ ActiveRecord::Schema.define(version: 20151120021128) do
   end
 
   create_table "setlists", force: :cascade do |t|
-    t.integer  "user_id",          null: false
-    t.string   "name",             null: false
-    t.string   "invite_code",      null: false
-    t.string   "list_spotify_url", null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "user_id",     null: false
+    t.string   "name",        null: false
+    t.string   "invite_code", null: false
+    t.string   "spotify_url", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string   "title",            null: false
-    t.string   "artist",           null: false
-    t.string   "album",            null: false
-    t.string   "song_spotify_url", null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string   "title",       null: false
+    t.string   "artist",      null: false
+    t.string   "album",       null: false
+    t.string   "spotify_url", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

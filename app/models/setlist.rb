@@ -5,7 +5,7 @@ class Setlist < ActiveRecord::Base
   has_many :guest_setlists
   has_many :guests, through: :guest_setlists, source: :user
 
-  validates_presence_of :host, :name, :invite_code, :list_spotify_url
+  validates_presence_of :host, :name, :invite_code, :spotify_url
 
   def tracks_from_setlist(array_of_tracks_hash)
     tracks_not_loaded = []
@@ -17,7 +17,7 @@ class Setlist < ActiveRecord::Base
   end
 
   def spotify_id
-    list_spotify_url.split("/").last
+    spotify_url.split("/").last
   end
 
   def sort_by_votecount(list_status = nil)

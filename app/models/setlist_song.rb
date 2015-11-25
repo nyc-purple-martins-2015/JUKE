@@ -11,7 +11,7 @@ class SetlistSong < ActiveRecord::Base
 
   def get_position_in_playlist(playlist_json)
     track_item_array = playlist_json["tracks"]["items"]
-    track_item_array.index{ |track_item| track_item["track"]["href"] == song.song_spotify_url }
+    track_item_array.index{ |track_item| track_item["track"]["href"] == song.spotify_url }
   end
 
   def move_to_top(token, user, playlist_json)

@@ -85,8 +85,8 @@ class SetlistsController < ApplicationController
   private
 
 # we need a validation of some kind on the url...all setlists
-# should be forced to have a valid list_spotify_url that attaches to spotify
+# should be forced to have a valid spotify_url that attaches to spotify
   def setlist_params
-    params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
+    params.require(:setlist).permit(:name, :spotify_url, :invite_code).merge(host: current_user)
   end
 end
