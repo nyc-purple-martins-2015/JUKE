@@ -24,5 +24,4 @@ class Setlist < ActiveRecord::Base
   def vote_count_sort(s_songs)
     s_songs.sort_by { |setlist_song| -1 * setlist_song.count_vote_total }
   end
-
 end
