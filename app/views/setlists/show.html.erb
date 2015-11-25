@@ -1,11 +1,12 @@
 <div class="showpage_songs_container">
 
-  <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
-
-  <ol>
-    <div class="setlist_title">
+    <div class="setlist_title" id="show_setlist_name">
       <h3><%= @setlist.name %></h3>
     </div>
+
+    <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
+
+  <ol>
     <% current_songs = @setlist_songs.where(list_status: 2) %>
     <% current_songs.each do |current_song| %>
       <% song = current_song.song %>
@@ -29,7 +30,7 @@
   </ol>
 </br>
   <ol>
-    <div class="setlist_title">
+    <div class="setlist_title" id="pending_setlist_title">
       <h3> Pending Songs </h3>
     </div>
     <% pending_songs = @setlist_songs.where(list_status: 0) %>

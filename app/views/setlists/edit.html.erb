@@ -1,12 +1,4 @@
-  <div class="setlist_title">
-    <h2><%= @setlist.name %></h2>
-  </div>
-
-<div class="invite_button">
-  <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
-</div>
-</br>
-<div class="both_list_links">
+  <div class="edit_page_container">
 
 <div class="link_to_player_page">
   <%= link_to "Play Juke", setlist_player_path(@setlist), method: :get, :target => " _blank" %>
@@ -18,30 +10,44 @@
   </div>
 
   <div id="hide_button">
-      <a href="/home">Hide List</a>
+      <a href="/home">X</a>
   </div>
 
-  <div id="current_list_link">
-    <a href="/home">Current List</a>
+  <div>
+    <div class="setlist_title" id="edit_setlist_title">
+      <h2><%= @setlist.name %></h2>
+    </div>
+    <div class="both_list_links">
+      <div class="invite_button">
+        <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
+      </div>
+
+      </br>
+
+      <div id="hide_button">
+          <a href="/home">X</a>
+      </div>
+
+      <div id="current_list_link">
+        <a href="/home">Current List</a>
+      </div>
+      </br>
+      <div id="suggested_list_link">
+        <a href="/home">Suggested Songs</a>
+      </div>
+    </div>
   </div>
-  </br>
-  <div id="suggested_list_link">
-    <a href="/home">Suggested Songs</a>
+
+  <div class="both_lists">
+    <div class="current_list_container">
+      <ol>
+      <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
+      </ol>
+    </div>
+
+    <div class="suggested_songs_container">
+      <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
+    </div>
   </div>
 
-</div>
-
-
-
-<div class="both_lists">
-
-  <div class="current_list_container">
-    <ol>
-    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
-    </ol>
-  </div>
-
-  <div class="suggested_songs_container">
-    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
-  </div>
 </div>

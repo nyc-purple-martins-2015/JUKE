@@ -1,24 +1,22 @@
+.edit_page_container {
+  position: relative;
+}
+
 .invite_button {
   position: relative;
   text-align: center;
-  left: 37%;
-  width: 12em;
+  height:1.5em;
+  right: 1.8em;
+  width: 10em;
   border: 1px black solid;
   border-radius: 10px;
   font-family: 'Architects Daughter', cursive;
   font-size: 2em;
 }
 
-.setlist_title {
-  text-align: center;
+.both_lists {
   position: relative;
-  top: -.5em;
-  font-size: 3em;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
-  letter-spacing: 5px;
-  font-family: 'Rock Salt', cursive;
-  margin-bottom: -1em
+  top: -10em;
 }
 
 .current_list_container {
@@ -29,12 +27,12 @@
   display: none;
 }
 
+
 .both_list_links {
   position: relative;
   text-align: center;
   top: 1em;
   left: 40%;
-  width: 12em;
   font-family: 'Architects Daughter', cursive;
   font-size: 1.5em;
 }
@@ -70,11 +68,22 @@
 }
 
 #hide_button {
+  font-size: 2em;
   position: relative;
-  top: -2em;
+  right: 2em;
+  top: -3em;
   width: 17.3em;
   padding-top: 1em;
   padding-bottom: 1em;
-  right: 2.5em;
   display: none;
+}
+
+#invite_submit_button {
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+#edit_setlist_title {
+position: relative;
+left: 2em;
 }

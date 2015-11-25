@@ -8,16 +8,18 @@ body {
 .header {
   position: relative;
   height: 5em;
-  background-color: black;
-  color: white;
   z-index: 0;
 }
 
 .header a{
-  top: .5em;
+  text-align: center;
   position: relative;
-  right: 2em;
-  color: white;
+  display: inline-block;
+  left: 80%;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
   text-decoration: none;
 }
 
@@ -31,51 +33,8 @@ body {
   z-index: -1;
 }
 
-.header a{
-  top: .5em;
-  position: relative;
-  right: 2em;
-}
-
-#dropdown_button {
-  position: absolute;
-  top: .5em;
-  left: 92%;
-}
-
 #dropdown_button img{
   height: 4em;
-}
-
-#profile_dropdown {
-  position: absolute;
-  right: 0;
-  font-family: 'Architects Daughter', cursive;
-  border-left: 2px white solid;
-  border-right: 2px white solid;
-  border-bottom: 2px white solid;
-  color: white;
-  background-color: black;
-  width: 10em;
-  z-index: 1;
-  display: none;
-}
-
-#profile_dropdown p{
-  position: relative;
-  left: 1em;
-}
-
-#profile_dropdown a{
-  color: white;
-}
-
-#profile_dropdown a:visited{
-  color: white;
-}
-
-#profile_dropdown a:hover{
-  color: gray;
 }
 
 
@@ -89,9 +48,7 @@ body {
 }
 
 #dropdown_button {
-  position: absolute;
-  top: .5em;
-  left: 92%;
+  top: 1.5em;
 }
 
 #dropdown_button img{
@@ -102,11 +59,6 @@ body {
   position: absolute;
   right: 0;
   font-family: 'Architects Daughter', cursive;
-  border-left: 2px white solid;
-  border-right: 2px white solid;
-  border-bottom: 2px white solid;
-  color: white;
-  background-color: black;
   width: 10em;
   z-index: 1;
   display: none;
@@ -118,15 +70,15 @@ body {
 }
 
 #profile_dropdown a{
-  color: white;
+  color: black;
 }
 
 #profile_dropdown a:visited{
-  color: white;
+  color: black;
 }
 
 #profile_dropdown a:hover{
-  color: gray;
+  color: #ff2d95;
 }
 
 .footer {
@@ -163,11 +115,9 @@ a#header-juke-link {
   text-align: center;
 }
 .logo {
-  font-family: 'Rock Salt', cursive;
-  margin-left: 50%;
   font-weight: bolder;
   font-size: 20pt;
-  text-align: center;
+  padding-right: 1em;
 }
 
 .user_icon {
@@ -179,12 +129,6 @@ a#header-juke-link {
   margin-top: .5em;
   padding:0;
 
-}
-
-.logo img {
-  position: relative;
-  right: 1em;
-  height: 2em;
 }
 
 .login_and_logout {
