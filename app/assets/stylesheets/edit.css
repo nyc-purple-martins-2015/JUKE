@@ -93,9 +93,9 @@ left: 2em;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
   letter-spacing: 5px;
   font-family: 'Rock Salt', cursive;
-  font-size: 1.5em;
+  font-size: 1em;
   left: 2em;
-  top: -3.5em;
+  top: -5.5em;
 }
 
 .link_to_player_page a{
@@ -108,4 +108,11 @@ left: 2em;
 
 .link_to_player_page a:hover{
   color: black;
+}
+
+#reorder_juke_link {
+  position: absolute;
+  top: .1em;
+  z-index: 1;
+  margin-top: -3em;
 }
