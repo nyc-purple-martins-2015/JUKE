@@ -27,6 +27,8 @@ class SpotifyPoster
   def create_request(uri)
     if @args[:request_type] == "put"
       Net::HTTP::Put.new(uri)
+    elsif @args[:request_type] == "delete"
+      Net::HTTP::Delete.new(uri)
     else
       Net::HTTP::Post.new(uri)
     end
