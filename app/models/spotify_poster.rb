@@ -1,4 +1,4 @@
-class SpotifyPoster
+git class SpotifyPoster
   extend Parsable
 
   BASE_URL = "https://api.spotify.com"

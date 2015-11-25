@@ -13,6 +13,10 @@
       <h2><%= @setlist.name %></h2>
     </div>
 
+    <div id="invite_code">
+      Code: <%= @setlist.invite_code %>
+    </div>
+
     <div class="both_list_links">
       <div class="invite_button">
         <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
