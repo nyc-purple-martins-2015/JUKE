@@ -26,7 +26,7 @@
   top: -4em;
   font-family: 'Architects Daughter', cursive;
   display: none;
-  left: 8%;
+  left: 20%;
   margin-left: 15%;
   margin-top: 2%;
   margin-bottom: 2%;
@@ -54,7 +54,7 @@
   position: relative;
   top: -4em;
   font-family: 'Architects Daughter', cursive;
-  left: 8%;
+  left: 35%;
   display: none;
   margin-right: 15%;
   margin-top: 2%;
@@ -176,4 +176,10 @@
   border: solid black 1px;
   border-radius: 10px;
   padding: .1em .3em .1em .3em;
+}
+
+#search_break {
+  position: relative;
+  left: 2em;
+  text-align: center;
 }
