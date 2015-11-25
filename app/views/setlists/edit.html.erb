@@ -12,6 +12,10 @@
   <%= link_to "Play Juke", setlist_player_path(@setlist), method: :get, :target => " _blank" %>
 </div>
 
+<div class="link_to_player_page">
+  <%= link_to "Reorder Juke", setlist_reorder_path(@setlist) %>
+</div>
+
 <div class="both_lists">
   <div class="setlist_title">
     <h2><%= @setlist.name %></h2>

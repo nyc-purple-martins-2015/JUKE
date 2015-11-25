@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # root 'index#home'
   root 'sessions#new'
 
-  get 'setlists/:id/reorder' => "setlists#reorder"
+  get 'setlists/:id/reorder' => "setlists#reorder", as: :setlist_reorder
 
   resources :setlists do
     get 'invite' => 'setlists#invite'
