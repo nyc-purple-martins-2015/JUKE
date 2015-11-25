@@ -1,16 +1,17 @@
+.edit_page_container {
+  position: relative;
+}
+
 .invite_button {
   position: relative;
   text-align: center;
-  left: 37%;
-  width: 12em;
+  height:1.5em;
+  right: 1.8em;
+  width: 10em;
   border: 1px black solid;
   border-radius: 10px;
   font-family: 'Architects Daughter', cursive;
   font-size: 2em;
-}
-
-.current_list_container {
-  display: none;
 }
 
 .both_lists {
@@ -18,9 +19,14 @@
   top: -10em;
 }
 
+.current_list_container {
+  display: none;
+}
+
 .suggested_songs_container {
   display: none;
 }
+
 
 .both_list_links {
   position: relative;
@@ -71,4 +77,13 @@
   padding-top: 1em;
   padding-bottom: 1em;
   display: none;
+}
+
+#invite_submit_button {
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+#edit_setlist_container {
+  position: relative;
 }
