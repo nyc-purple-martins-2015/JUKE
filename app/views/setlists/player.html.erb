@@ -1,5 +1,5 @@
 <div class="jukebox">
-  <p> <%= @setlist.name %><br>
+  <p> <%= @setlist.name %><p>
     <div class="spotify_player">
       <iframe src="https://embed.spotify.com/?uri=spotify:user:<%= @setlist.host.uid %>:playlist:<%= @setlist.spotify_id %>" width="750" height="950" frameborder="0" allowtransparency="true"></iframe>
     </div>

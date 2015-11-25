@@ -18,7 +18,7 @@
 
     <div id="update_button">
     <% if params[:action] == "edit" && hide_update?%>
-      <%= f.submit "Update!" %>
+      <span id="edit_update_button"><%= f.submit "Update" %></span>
     <% end %>
     </div>
   <% end %>

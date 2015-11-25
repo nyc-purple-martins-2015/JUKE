@@ -85,7 +85,7 @@
 
 #edit_setlist_title {
 position: relative;
-left: 2em;
+left: 2.2em;
 }
 
 .link_to_player_page {
@@ -115,4 +115,18 @@ left: 2em;
   top: .1em;
   z-index: 1;
   margin-top: -3em;
+}
+
+#invite_code {
+  position: relative;
+  text-align: center;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.5em;
+  left: 2em;
+}
+
+#edit_update_button {
+  font-size: 1.5em;
+  border: 1px black solid;
+  border-radius: 10px;
 }
