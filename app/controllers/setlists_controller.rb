@@ -75,7 +75,7 @@ class SetlistsController < ApplicationController
     sorted_setlist = @setlist.sort_by_votecount
     SpotifyTracksDeleter.new(session[:token], {request_type: "delete", setlist_songs: sorted_setlist, user: current_user, setlist: @setlist}).post
     SpotifyAddTracksToPlaylistPoster.new(session[:token], {setlist: @setlist, setlist_songs: sorted_setlist, user: current_user }).post
-    redirect_to setlist_path(@setlist)
+    redirect_to edit_setlist_path(@setlist)
   end
 
   def player
