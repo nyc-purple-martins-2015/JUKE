@@ -41,7 +41,7 @@
       <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
       </ol>
     <% else %>
-      <p>Nothing on the current list. Invite friends to join your juke and add songs!</p>
+      <p>Nothing on the current list. Invite friends to join your Juke and add songs!</p>
     <% end %>
   </div>
 
@@ -49,7 +49,7 @@
     <% if !@setlist.setlist_songs.where(list_status: [0, 1]).empty? %>
       <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
     <% else %>
-      <p>Nothing on suggested song list. Invite friends to join your juke and add songs!</p>
+      <p>Nothing on suggested song list. Invite friends to join your Juke and add songs!</p>
     <% end %>
   </div>
 </div>
