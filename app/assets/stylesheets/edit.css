@@ -33,7 +33,6 @@
   text-align: center;
   top: 1em;
   left: 40%;
-  width: 12em;
   font-family: 'Architects Daughter', cursive;
   font-size: 1.5em;
 }
@@ -84,6 +83,7 @@
   border-radius: 10px;
 }
 
-#edit_setlist_container {
-  position: relative;
+#edit_setlist_title {
+position: relative;
+left: 2em;
 }
