@@ -5,10 +5,9 @@
   </head>
   <body>
     <h1>Ready to Juke?</h1>
-    <p>
-      Your friend <%= @setlist.host.username %> has invited you to join his juke with an invite code of: <h3><%= @setlist.invite_code %></h3>.
-      <br>
-    </p>
-    <p>Use this code to join this Juke!</p>
+    <p></p>
+    <p>Your friend <%= @setlist.host.username %> has invited you to share and collaborate on a spotify playlist with Juke.</p></br>
+
+    <p>Go to <a href="http://jukeapp.herokuapp.com">http://jukeapp.herokuapp.com</a> and use code <%= @setlist.invite_code %> to join a Juke.</p>
   </body>
 </html>
