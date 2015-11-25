@@ -10,7 +10,7 @@ RSpec.describe Setlist, type: :model do
 
   context "#spotify_id" do
     let(:setlist) {FactoryGirl.build :setlist}
-    it "should not return a string of everything after the last '/'" do
+    it "should return a string of everything after the last '/'" do
       expect(setlist.spotify_id.include?("spotify.com")).to be(false)
     end
   end
