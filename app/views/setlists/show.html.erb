@@ -3,7 +3,7 @@
   <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
 
   <ol>
-    <div class="setlist_title">
+    <div class="setlist_title" id="show_setlist_name">
       <h3><%= @setlist.name %></h3>
     </div>
     <% @setlist.sort_by_votecount(2).each do |current_song| %>

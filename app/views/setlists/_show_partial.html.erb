@@ -1,5 +1,4 @@
 <ol>
-  <h3><%= list_title %></h3>
   <%= form_for @setlist, method: "put" do |f| %>
     <% setlist_songs.each do |setlist_song| %>
       <% song = setlist_song.song %>
