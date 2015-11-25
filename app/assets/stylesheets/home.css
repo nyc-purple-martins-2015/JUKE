@@ -53,6 +53,12 @@
 
 }
 
+#join_juke_form_submit {
+  border: black 1px solid;
+  border-radius: 10px;
+  padding-top: .3em;
+}
+
 input[type=submit] {
     font-size: 1em;
     font-family: 'Architects Daughter', cursive;

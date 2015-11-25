@@ -8,6 +8,7 @@
 
 .new_playlists_body {
   text-align: center;
+  font-size: 1.5em;
 }
 
 #new_playlists_header {
@@ -36,7 +37,12 @@
 
 .spotify_playlist_container  {
   position: relative;
-  right: 3em;
+  right: 2em;
+}
+
+.spotify_playlist_container ul span {
+  border: 1px black solid;
+  border-radius: 10px;
 }
 
 .suggested_songs_container {
@@ -58,11 +64,16 @@
   position: relative;
   top: -.5em;
   font-size: 1.5em;
+  left: .5em;
   color: #fff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
   letter-spacing: 5px;
   font-family: 'Rock Salt', cursive;
-  margin-bottom: -1em
+  margin-bottom: -2em;
+}
+
+#pending_setlist_title {
+  padding-bottom: 1em;
 }
 
 #show_setlist_name {
@@ -73,6 +84,11 @@
   font-family: 'Rock Salt', cursive;
 }
 
+.create_setlist_form form input{
+  font-size: 1em;
+  background-color: transparent;
+}
+
 .song_name {
   font-family: 'Architects Daughter', cursive;
   font-size: 2em
@@ -80,6 +96,7 @@
 
 .song_details {
   font-size: 1.5em;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .artist_name {
@@ -106,8 +123,24 @@
   z-index: 0
 }
 
+#create_submit_button {
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
+#show_partial_list li{
+  margin-top: 1em;
+}
+
+#show_partial_list .song {
+  border: none;
+}
+
 .song {
   font-size: 1.5em;
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: .1em .3em .1em .3em;
 }
 
 .song_details {
@@ -127,4 +160,10 @@
 .list_title {
   text-align: center;
   text-decoration: underline;
+}
+
+.vote_button {
+  border: solid black 1px;
+  border-radius: 10px;
+  padding: .1em .3em .1em .3em;
 }
