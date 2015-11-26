@@ -133,6 +133,10 @@
   z-index: 0
 }
 
+.search_form form input:hover{
+  color: #ff2d95;
+}
+
 #create_submit_button {
   border: black 1px solid;
   border-radius: 10px;
@@ -178,8 +182,21 @@
   padding: .1em .3em .1em .3em;
 }
 
-#search_break {
+.vote_button input:hover {
+  color: #ff2d95;
+}
+
+.invite_form textarea {
+  font-family: 'Architects Daughter', cursive;
   position: relative;
-  left: 2em;
-  text-align: center;
+  font-size: .5em;
+  background: transparent;
+}
+
+.invite_form textarea:hover {
+  color: #ff2d95;
+}
+
+.invite_form form input:hover {
+  color: #ff2d95;
 }
