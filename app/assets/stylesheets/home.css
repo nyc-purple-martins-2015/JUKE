@@ -55,6 +55,10 @@
 
 }
 
+.join_juke_form form input:hover {
+  color: #ff2d95;
+}
+
 #join_juke_form_submit {
   position: relative;
   border: black 1px solid;

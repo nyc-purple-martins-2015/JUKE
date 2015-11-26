@@ -14,6 +14,10 @@
   font-size: 2em;
 }
 
+.invite_button form input:hover {
+  color: #ff2d95;
+}
+
 .both_lists {
   position: relative;
   top: -8em;
@@ -46,6 +50,10 @@
   color: black;
 }
 
+.both_list_links a:hover {
+  color: #ff2d95;
+}
+
 #current_list_link {
   position: relative;
   border: 1px solid black;
@@ -54,7 +62,6 @@
   padding-top: 1em;
   padding-bottom: 1em;
   right: 2.5em;
-
 }
 
 #suggested_list_link {
@@ -117,6 +124,12 @@ left: 2.2em;
   margin-top: -3em;
 }
 
+#search_juke_link {
+  position: absolute;
+  top: .1em;
+  z-index: 1;
+}
+
 #invite_code {
   position: relative;
   text-align: center;
@@ -129,4 +142,8 @@ left: 2.2em;
   font-size: 1.5em;
   border: 1px black solid;
   border-radius: 10px;
+}
+
+#show_partial_list form input:hover {
+  color: #ff2d95;
 }

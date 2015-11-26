@@ -34,3 +34,7 @@
   border-radius: 10px;
   text-decoration: none;
 }
+
+.showpage_users_container ul a:hover{
+  color: #ff2d95;
+}
