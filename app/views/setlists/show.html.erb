@@ -3,8 +3,15 @@
     <div class="setlist_title">
       <h3><%= @setlist.name %></h3>
     </div>
+    <!-- 
+    The pending and current sections could probably be factored out into a single partial that takes params?
+
+    -->
     <% current_songs = @setlist_songs.where(list_status: 2) %>
     <% current_songs.each do |current_song| %>
+     <!-- why does an object called song have an attribute called song?
+     That could get confusing quickly.
+      -->
       <% song = current_song.song %>
       <li><span class="song_name"><%= song.title %></span></li>
 
