@@ -1,0 +1,40 @@
+.showpage_users_container h3 {
+  left: .5em;
+  text-align: center;
+  position: relative;
+  font-size: 3em;
+  color: #fff;
+ text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.showpage_users_container ul {
+  list-style: none;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.showpage_users_container ul a{
+  color: black;
+  border: black 1px solid;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: .1em .3em .1em .3em;
+}
+
+.showpage_users_container ul li{
+  margin: 1em;
+}
+
+.showpage_users_container ul a:visited{
+  color: black;
+  border: black 1px solid;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.showpage_users_container ul a:hover{
+  color: #ff2d95;
+}

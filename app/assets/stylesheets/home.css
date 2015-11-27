@@ -1,0 +1,79 @@
+.juke_button {
+  text-align: center;
+  position: relative;
+  top: .5em;
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+}
+
+#new_juke_button {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+}
+
+#join_juke_button {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+}
+
+#my_jukes_button {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+}
+
+.juke_button a {
+  text-decoration: none;
+  color: white;
+}
+
+.juke_button a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.juke_button a:hover {
+  color: black;
+}
+
+.join_juke_form form {
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  margin: 0 auto;
+  right: 3em;
+  top: 1em;
+  height: 5em;
+  z-index: 0
+}
+
+.join_juke_form form input {
+  position: relative;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: transparent;
+
+}
+
+.join_juke_form form input:hover {
+  color: #ff2d95;
+}
+
+#join_juke_form_submit {
+  position: relative;
+  border: black 1px solid;
+  border-radius: 10px;
+  padding-top: .3em;
+  left: 3em;
+}
+
+input[type=submit] {
+  position: relative;
+    font-size: 1em;
+    font-family: 'Architects Daughter', cursive;
+    padding: 5px 15px;
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+}

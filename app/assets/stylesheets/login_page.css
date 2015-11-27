@@ -1,11 +1,11 @@
 
 .login_page{
   text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-  color:red;
+    -2px -2px 0 #ff2d95,
+    2px -2px 0 #ff2d95,
+    -2px 2px 0 #ff2d95,
+    2px 2px 0 #ff2d95;
+  color: white;
   font-size: 2em;
   position: relative;
   text-align: center;
@@ -13,7 +13,16 @@
 }
 
 .login_page a:visited{
-  color: red;
+   text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: white;
+  font-size: 2em;
+  position: relative;
+  text-align: center;
+  font-family: 'Architects Daughter', cursive;
 }
 
 .guest_login {
@@ -39,8 +48,6 @@ font-size: 10em;
   position: fixed;
   top: -5em;
   left: 0;
-
-  /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
 }

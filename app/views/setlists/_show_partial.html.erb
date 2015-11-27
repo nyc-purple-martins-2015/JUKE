@@ -1,14 +1,13 @@
-<ol>
-  <h3><%= list_title %></h3>
+<ol id="show_partial_list">
   <%= form_for @setlist, method: "put" do |f| %>
     <% setlist_songs.each do |setlist_song| %>
       <% song = setlist_song.song %>
 
-      <li class="song">
+      <li>
       <% if setlist_song.list_status == 0 %>
         <%= check_box_tag "setlist_songs[]", setlist_song.id %>
       <% end %>
-      <%= song.title %>
+      <span class="song"><%= song.title %></span>
       </li>
 
       <h7 class="song_details">
@@ -19,7 +18,7 @@
 
     <div id="update_button">
     <% if params[:action] == "edit" && hide_update?%>
-      <%= f.submit "Update!" %>
+      <span id="edit_update_button"><%= f.submit "Update on Spotify" %></span>
     <% end %>
     </div>
   <% end %>

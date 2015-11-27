@@ -1,3 +1,5 @@
+!['circlestatus'](https://circleci.com/gh/nyc-purple-martins-2015/JUKE.svg?style=shield&circle-token=:circle-token)
+
 == README
 
 This README would normally document whatever steps are necessary to get the

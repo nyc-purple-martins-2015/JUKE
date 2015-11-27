@@ -1,23 +1,66 @@
-<div class="invite_button">
-  <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
-</div>
+<div class="edit_page_container">
 
-<div class="both_lists">
-  <div class="setlist_title">
-    <h2><%= @setlist.name %></h2>
+  <div class="link_to_player_page">
+    <%= link_to "Play Juke", setlist_player_path(@setlist), method: :get, :target => " _blank" %>
   </div>
-  <div class="current_list_container">
-    <ol>
+
+  <div class="link_to_player_page" id="reorder_juke_link">
+    <%= link_to "Reorder on Spotify", setlist_reorder_path(@setlist) %>
+  </div>
+
+  <div class="link_to_player_page" id="search_juke_link">
+    <%= link_to "Search on Spotify", setlist_path(@setlist) %>
+  </div>
+
+  <div>
+    <div class="setlist_title" id="edit_setlist_title">
+      <h2><%= @setlist.name %></h2>
+    </div>
+
+    <div id="invite_code">
+      Code: <%= @setlist.invite_code %>
+    </div>
+
+    <div class="both_list_links">
+      <div class="invite_button">
+        <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
+      </div>
+
+      </br>
+
+      <div id="hide_button">
+          <a href="/home">X</a>
+      </div>
+
+      <div id="current_list_link">
+        <a href="/home">Current List</a>
+      </div>
+      </br>
+      <div id="suggested_list_link">
+        <a href="/home">Suggested Songs</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="both_lists">
+    <div id="hide_button">
+        <a href="/home">X</a>
+    </div>
+    <div class="current_list_container">
+      <ol>
     <!-- 
     The following selection logic is too much for a view. What does status 2 mean?
     It presumably has some meanding like "live" or "aproved"? 
     Define a meaningfully-named method on setlist like approved_songs and just reference that here
     -->
-    <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.setlist_songs.where(list_status: 2)} %>
-    </ol>
+      
+      <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>
+      </ol>
+    </div>
+    <div class="suggested_songs_container">
+      <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.sort_by_votecount([0, 1])} %>
+    </div>
   </div>
 
-  <div class="suggested_songs_container">
-    <%= render partial: "show_partial", locals: {list_title: "Suggested Tracks", setlist_songs: @setlist.setlist_songs.where(list_status: [0, 1])} %>
-  </div>
 </div>

@@ -46,19 +46,13 @@ class SetlistsController < ApplicationController
     if params[:setlist][:new_setlist]
       result =SpotifyNewPlaylistPoster.new(session[:token], { user: current_user, name: params[:setlist][:name] }).post
     end
-
     setlist = Setlist.new(setlist_params)
     if setlist.save
-      array_of_tracks_hash = get_setlist_tracks(setlist)
-      tracks_not_loaded = []
-      array_of_tracks_hash.each do |track_hash|
-        song = Song.find_or_create_by(track_hash)
-        setlist_song = SetlistSong.new(setlist: setlist, song: song, list_status: 2)
-        tracks_not_loaded << setlist_song.title unless setlist_song.save
-      end
+      json = SpotifyPlaylistGetter.new(session[:token], setlist: setlist).get
+      array_of_tracks_hash = SpotifyGetter.parse_playlist(json)
+      setlist.tracks_from_setlist(array_of_tracks_hash)
       redirect_to edit_setlist_path(setlist)
     else
-      flash[:alert] = "I'm sorry but we were unable to use that setlist"
       redirect_to new_setlist_path
     end
   end
@@ -77,15 +71,19 @@ class SetlistsController < ApplicationController
     @setlist = Setlist.find(params[:id])
     response = SpotifyPlaylistGetter.new(session[:token], setlist: @setlist).get
     json = JSON.parse(response.body)
-    # SpotifyReorderPutter.new(session[:token], {user: current_user, setlist: @setlist, request_type: "put", range_start: 14, insert_before: 0, range_length: 1}).post
-    redirect_to setlist_path(@setlist)
+    sorted_setlist = @setlist.sort_by_votecount
+    SpotifyTracksDeleter.new(session[:token], {request_type: "delete", setlist_songs: sorted_setlist, user: current_user, setlist: @setlist}).post
+    SpotifyAddTracksToPlaylistPoster.new(session[:token], {setlist: @setlist, setlist_songs: sorted_setlist, user: current_user }).post
+    redirect_to edit_setlist_path(@setlist)
+  end
+
+  def player
+    @setlist = Setlist.find(params[:setlist_id])
   end
 
   private
 
-# we need a validation of some kind on the url...all setlists
-# should be forced to have a valid list_spotify_url that attaches to spotify
   def setlist_params
-    params.require(:setlist).permit(:name, :list_spotify_url, :invite_code).merge(host: current_user)
+    params.require(:setlist).permit(:name, :spotify_url, :invite_code).merge(host: current_user)
   end
 end

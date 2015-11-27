@@ -1,4 +1,5 @@
 class SpotifyPoster
+  extend Parsable
 
   BASE_URL = "https://api.spotify.com"
 
@@ -38,6 +39,8 @@ class SpotifyPoster
       # whereas having multiple classes just for the http part 
       # possibly doesn't.
       Net::HTTP::Put.new(uri)
+    elsif @args[:request_type] == "delete"
+      Net::HTTP::Delete.new(uri)
     else
       Net::HTTP::Post.new(uri)
     end

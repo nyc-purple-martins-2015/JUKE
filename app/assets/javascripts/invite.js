@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     if($(".invite_form").is(":visible")){
       $(".invite_form").remove();
+      $("#suggested_list_link").toggle();
+      $("#current_list_link").toggle();
     }
     else {
       var request = $.ajax({
@@ -12,6 +14,8 @@ $(document).ready(function(){
       });
       request.done(function(response){
         $(".invite_button").append(response);
+        $("#suggested_list_link").toggle();
+        $("#current_list_link").toggle();
       })
     }
   });

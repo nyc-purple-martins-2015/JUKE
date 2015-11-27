@@ -14,7 +14,7 @@ class SetlistSong < ActiveRecord::Base
 
   def get_position_in_playlist(playlist_json)
     track_item_array = playlist_json["tracks"]["items"]
-    track_item_array.index{ |track_item| track_item["track"]["href"] == song.song_spotify_url }
+    track_item_array.index{ |track_item| track_item["track"]["href"] == song.spotify_url }
   end
 
   # Similarly, this probably belongs on the list - the list manages songs and their 
@@ -22,5 +22,10 @@ class SetlistSong < ActiveRecord::Base
   def move_to_top(token, user, playlist_json)
     pos = get_position_in_playlist(playlist_json)
     SpotifyReorderPutter.new(token, { user: user, setlist: setlist, request_type: "put", range_start: pos, insert_before: 0, range_length: 1 }).post
+  end
+
+  def count_vote_total
+    return 0 if votes.count == 0
+    votes.map(&:value).reduce(:+)
   end
 end

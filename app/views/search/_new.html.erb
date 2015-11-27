@@ -14,18 +14,18 @@
           <%= f.hidden_field :title, value: song[:title] %>
           <%= f.hidden_field :artist, value: song[:artist] %>
           <%= f.hidden_field :album, value: song[:album] %>
-          <%= f.hidden_field :song_spotify_url, value: song[:url] %>
+          <%= f.hidden_field :spotify_url, value: song[:url] %>
           <%= hidden_field_tag 'setlist_id', setlist_id%>
           <span class="song"><%=f.submit song[:title] %></span>
           <h7 class="song_details">
-            <span class="artist_name">| <%= song[:artist] %></span> |
+            | <span class="artist_name"> <%= song[:artist] %></span> |
             <span class="album_name"><%= song[:album] %></span>
           </h7>
         </div>
       <% end %>
     <% end %>
+    <h3 id="search_break">_______________________</h3>
   </div>
 <%end%>
 
-<h3 class="search_results"></h3>
 

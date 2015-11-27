@@ -1,4 +1,5 @@
 class SpotifyGetter
+  extend Parsable
 
   BASE_URL = "https://api.spotify.com"
 
@@ -15,13 +16,6 @@ class SpotifyGetter
       http.request(req)
     end
     res
-  end
-
-  def self.parse_playlists(response)
-    parsed = JSON.parse(response.body)
-    parsed["items"].each_with_object([]) do |playlist, array|
-      array << {name: playlist["name"], url: playlist["href"]}
-    end
   end
 
   private

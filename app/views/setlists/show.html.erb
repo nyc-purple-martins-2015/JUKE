@@ -1,46 +1,50 @@
 <div class="showpage_songs_container">
-  <ol>
-    <div class="setlist_title">
-      <h3><%= @setlist.name %></h3>
-    </div>
-    <!-- 
-    The pending and current sections could probably be factored out into a single partial that takes params?
 
-    -->
-    <% current_songs = @setlist_songs.where(list_status: 2) %>
-    <% current_songs.each do |current_song| %>
-     <!-- why does an object called song have an attribute called song?
-     That could get confusing quickly.
-      -->
-      <% song = current_song.song %>
-      <li><span class="song_name"><%= song.title %></span></li>
-
-      <h7 class="song_details">
-        <span class="artist_name"><%= song.artist %></span> |
-        <span class="album_name"><%= song.album %></span>
-      </h7>
-
-       <div class="vote_buttons">
-          <% if params[:action] == "show" %>
-            <%= render partial: 'votes/new', layout: false, locals: {setlist_song: current_song} %>
-          <% end %>
-        </div>
-    <% end %>
-  </ol>
-  <ol>
-    <h3> Pending Songs </h3>
-    <% pending_songs = @setlist_songs.where(list_status: 0) %>
-    <% pending_songs.each do |pending_song| %>
-      <% suggested_song = pending_song.song %>
-      <li>
-        <%= suggested_song.title %>
-      </li>
-      <h7 class="song_details">
-        <span class="artist_name"><%= suggested_song.artist %></span> |
-        <span class="album_name"><%= suggested_song.album %></span>
-      </h7>
-    <% end %>
-  </ol>
+  <div class="setlist_title" id="show_setlist_name">
+    <h3><%= @setlist.name %></h3>
+  </div>
 
   <h2 class="search_form"><%=render partial: "search/new", locals: {setlist_id: @setlist.id}%></h2>
+
+  <ol>
+    <% @setlist.sort_by_votecount(2).each do |current_song| %>
+      <% song = current_song.song %>
+      <ul>
+        <div class="song_name"><%= song.title %></div>
+        </br>
+      </ul>
+
+      <h7 class="song_details">
+        <div class="artist_name"><%= song.artist %></div>
+        <div class="album_name"><%= song.album %></div>
+      </br>
+      </h7>
+
+      <div class="vote_buttons">
+        <% if params[:action] == "show" %>
+          <%= render partial: 'votes/new', layout: false, locals: {setlist_song: current_song} %>
+        <% end %>
+      </div>
+    <% end %>
+  </ol>
+
+  </br>
+
+  <ol>
+    <div class="setlist_title" id="pending_setlist_title">
+      <h3> Pending Songs </h3>
+    </div>
+    <% @setlist.sort_by_votecount([0, 1]).each do |pending_song| %>
+      <% suggested_song = pending_song.song %>
+      <ul>
+        <div class="song_name"><%= suggested_song.title %></div>
+      </ul>
+      <h7 class="song_details">
+        <div class="artist_name"><%= suggested_song.artist %></div>
+        <div class="album_name"><%= suggested_song.album %></div>
+        <p>________________</p>
+      </h7>
+    <% end %>
+  </ol>
+
 </div>
