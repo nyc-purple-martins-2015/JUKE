@@ -28,13 +28,13 @@ class SpotifyPoster
   def create_request(uri)
     if @args[:request_type] == "put"
       # Your class is called SpotifyPoster but sometimes puts.....
-      # Getter and poster may not need to be separate classes. 
+      # Getter and Poster may not need to be separate classes. 
       # They only differ in http verb and whether to read params or body
       # You could probably just have a single simple object with a
       # call_spotify(verb, url, hash_of_params) -> Hash method
       # i.e. that would return a hash of the json from spotify
       # If you were going to implement an object hierarchy 
-      # for the spotify interactions you might as well have it go 
+      # for the spotify interactions, you might as well have it go 
       # further and return objects. That would add some value
       # whereas having multiple classes just for the http part 
       # possibly doesn't.
