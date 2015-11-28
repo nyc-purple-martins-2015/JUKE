@@ -7,7 +7,6 @@ BASE_URL = "https://api.spotify.com"
     @query_array = query_array
   end
 
-
   private
 
     def format_endpoint
