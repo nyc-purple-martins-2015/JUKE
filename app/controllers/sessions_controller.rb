@@ -47,6 +47,7 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = u.id
+    puts "XXXXXXXXXX OAUTH token is #{auth_hash[:credentials][:token]}" 
     session[:token] = auth_hash[:credentials][:token]
     redirect_to home_path
   end

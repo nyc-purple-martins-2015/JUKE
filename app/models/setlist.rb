@@ -20,6 +20,10 @@ class Setlist < ActiveRecord::Base
     spotify_url.split("/").last
   end
 
+  # It would be preferable here to have separate pending_songs_by_votes and 
+  # approved_songs_by_votes methods or whatever the statuses mean, and not 
+  # have the client code have to pass in some mysterious list_status code
+
   def sort_by_votecount(list_status = nil)
     s_songs(list_status).sort_by { |setlist_song| -1 * setlist_song.count_vote_total }
   end

@@ -11,6 +11,7 @@ BASE_URL = "https://api.spotify.com"
   private
 
     def format_endpoint
+      # Use URI.escape for this instead of rolling your own
       altered_query = @query_array.split(" ").join("%20")
       BASE_URL + "/v1/search?q=#{altered_query}&limit=20&type=track"
     end

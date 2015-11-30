@@ -43,6 +43,7 @@
         <a href="/home">Suggested Songs</a>
       </div>
     </div>
+
   </div>
 
   <div class="both_lists">
@@ -51,6 +52,12 @@
     </div>
     <div class="current_list_container">
       <ol>
+    <!-- 
+    The following selection logic is too much for a view. What does status 2 mean?
+    It presumably has some meanding like "live" or "aproved"? 
+    Define a meaningfully-named method on setlist like approved_songs and just reference that here
+    -->
+      
       <%= render partial: "show_partial", locals: {list_title: "Current Playlist", setlist_songs: @setlist.sort_by_votecount(2)} %>
       </ol>
     </div>

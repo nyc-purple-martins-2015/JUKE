@@ -4,6 +4,7 @@ class CreateSetlists < ActiveRecord::Migration
       t.references :user, null: false
       t.string :name, null: false
       t.string :invite_code, null: false
+      # The list_ prefix here is probably redundant in a class called SetList
       t.string :list_spotify_url, null: false
 
       t.timestamps null: false
