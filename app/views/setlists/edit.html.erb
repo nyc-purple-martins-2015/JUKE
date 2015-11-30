@@ -13,15 +13,18 @@
   </div>
 
   <div>
-    <div class="setlist_title" id="edit_setlist_title">
-      <h2><%= @setlist.name %></h2>
-    </div>
-
-    <div id="invite_code">
-      Code: <%= @setlist.invite_code %>
-    </div>
 
     <div class="both_list_links">
+      <div id="edit_header">
+        <div class="setlist_title" id="edit_setlist_title">
+          <h2><%= @setlist.name %></h2>
+        </div>
+
+        <div id="invite_code">
+          Code: <%= @setlist.invite_code %>
+        </div>
+      </div>
+
       <div class="invite_button">
         <%= button_to "Invite", setlist_invite_path(@setlist), method: :get %>
       </div>
