@@ -1,4 +1,7 @@
 class SpotifyTracksDeleter < SpotifyPoster
+
+  private
+
   def format_endpoint
     BASE_URL + "/v1/users/#{@args.fetch(:user).uid}/playlists/#{@args.fetch(:setlist).spotify_id}/tracks"
   end
@@ -6,5 +9,9 @@ class SpotifyTracksDeleter < SpotifyPoster
   def payload
      song_uris = @args.fetch(:setlist_songs).map{ |setlist_song| "spotify:track:" + setlist_song.song.spotify_id }
     { uris: song_uris }
+  end
+
+  def create_request(uri)
+    Net::HTTP::Delete.new(uri)
   end
 end
