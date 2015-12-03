@@ -8,7 +8,7 @@ Where the party starts.
 
 <h3>Features</h3>
 
-  * Import playlists from Spotify
+  * Import playlists from [Spotify](https://www.spotify.com/us/)
   * Create new Spotify playlists through our app
   * Invite guests to your hosted playlists, guests can then:
     - Up/down vote existing songs
@@ -22,17 +22,17 @@ Where the party starts.
 
   * Ruby on Rails
   * Javascript
-  * JQuery
-  * Omni Auth login via OAuth
-  * Spotify Sync via the Spotify API
-  * Personalized E-mail invitations via ActionMailer
+  * [jQuery](https://jquery.com/)
+  * Omni Auth login via [OAuth](https://github.com/intridea/omniauth-oauth2)
+  * Spotify Sync via the [Spotify API](https://developer.spotify.com/web-api/)
+  * Personalized E-mail invitations via [ActionMailer](http://api.rubyonrails.org/classes/ActionMailer/Base.html)
 
 <h3>Team</h3>
 
-Corey Grad
-Rebecca Kleinberg
-Lawson Marlowe
-Jonathan Star
-Tahrim Uddin
+[Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)
+[Rebecca Kleinberg](https://www.linkedin.com/in/rebeccakleinberg)
+[Lawson Marlowe]()
+[Jonathan Star]()
+[Tahrim Uddin](https://www.linkedin.com/in/utahrim)
 
 <tt>rake doc:app</tt>.
