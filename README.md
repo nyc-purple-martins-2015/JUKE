@@ -29,10 +29,15 @@ Where the party starts.
 
 <h3>Team</h3>
 
-[Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)/n
+[Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)
+
 [Rebecca Kleinberg](https://www.linkedin.com/in/rebeccakleinberg)
+
 [Lawson Marlowe]()
+
 [Jonathan Star]()
+
 [Tahrim Uddin](https://www.linkedin.com/in/utahrim)
+
 
 <tt>rake doc:app</tt>.
