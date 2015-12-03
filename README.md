@@ -29,7 +29,7 @@ Where the party starts.
 
 <h3>Team</h3>
 
-[Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)
+[Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)/n
 [Rebecca Kleinberg](https://www.linkedin.com/in/rebeccakleinberg)
 [Lawson Marlowe]()
 [Jonathan Star]()
