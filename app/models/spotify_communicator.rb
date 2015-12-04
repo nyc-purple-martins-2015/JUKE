@@ -1,8 +1,9 @@
 class SpotifyCommunicator
 
-  def initialize(verb, token, args = {})
+  def initialize(verb, token, endpoint, args = {})
     @verb = verb
     @token = token
+    @endpoint = endpoint
     @args = args
   end
 
@@ -14,6 +15,9 @@ class SpotifyCommunicator
 
   private
 
+  def format_endpoint
+  end
+
   def create_request
     case @verb.downcase
     when "get" then Net::HTTP::Get.new(uri)
@@ -23,8 +27,5 @@ class SpotifyCommunicator
     else raise ArgumentError.new("Incorrect verb given to SpotifyCommunicator")
     end
   end
-
-
-
 
 end
