@@ -23,20 +23,17 @@ Where the party starts.
   * Ruby on Rails
   * Javascript
   * [jQuery](https://jquery.com/)
-  * Omni Auth login via [OAuth](https://github.com/intridea/omniauth-oauth2)
-  * Spotify Sync via the [Spotify API](https://developer.spotify.com/web-api/)
+  * Spotify login via [OAuth](https://github.com/icoretech/omniauth-spotify)
+  * Spotify sync via the [Spotify API](https://developer.spotify.com/web-api/)
   * Personalized E-mail invitations via [ActionMailer](http://api.rubyonrails.org/classes/ActionMailer/Base.html)
 
 <h3>Team</h3>
 
 [Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)
-
 [Rebecca Kleinberg](https://www.linkedin.com/in/rebeccakleinberg)
-
-[Lawson Marlowe]()
-
-[Jonathan Star]()
-
+[Lawson Marlowe](https://www.linkedin.com/in/lawson-e-marlowe-1940397)
+[Jonathan Star](https://www.linkedin.com/in/jon-star-3b4a07a0
+)
 [Tahrim Uddin](https://www.linkedin.com/in/utahrim)
 
 
