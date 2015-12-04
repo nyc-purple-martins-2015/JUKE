@@ -32,8 +32,7 @@ Where the party starts.
 [Corey Grad](https://www.linkedin.com/in/corey-grad-02b66825)
 [Rebecca Kleinberg](https://www.linkedin.com/in/rebeccakleinberg)
 [Lawson Marlowe](https://www.linkedin.com/in/lawson-e-marlowe-1940397)
-[Jonathan Star](https://www.linkedin.com/in/jon-star-3b4a07a0
-)
+[Jonathan Star](https://www.linkedin.com/in/jon-star-3b4a07a0)
 [Tahrim Uddin](https://www.linkedin.com/in/utahrim)
 
 
