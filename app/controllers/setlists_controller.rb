@@ -81,6 +81,11 @@ class SetlistsController < ApplicationController
     @setlist = Setlist.find(params[:setlist_id])
   end
 
+  def destroy
+    Setlist.destroy(params[:id])
+    redirect_to user_path(current_user.id)
+  end
+
   private
 
   def setlist_params

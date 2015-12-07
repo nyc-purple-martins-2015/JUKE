@@ -4,7 +4,8 @@
     <h3>My Jukes</h3>
     <ul>
       <% @user.setlists.each do |setlist| %>
-        <li><%= link_to setlist.name, edit_setlist_path(setlist) %></li>
+        <li><%= link_to setlist.name, edit_setlist_path(setlist) %> | <%= button_to('Destroy', setlist_path(setlist),
+          method: "delete") %></li>
       <% end %>
     </ul>
     <% end %>
