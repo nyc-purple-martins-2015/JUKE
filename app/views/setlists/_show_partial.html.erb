@@ -7,7 +7,7 @@
       <% if setlist_song.list_status == 0 %>
         <%= check_box_tag "setlist_songs[]", setlist_song.id %>
       <% end %>
-      <span class="song"><%= song.title %></span>
+      <span class="song"><%= song.title %> | <%=button_to('Delete', setlist_song.song, method: "delete", params: {setlist_song_id: setlist_song.id})%></span>
       </li>
 
       <h7 class="song_details">

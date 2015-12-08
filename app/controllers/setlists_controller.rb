@@ -33,6 +33,7 @@ class SetlistsController < ApplicationController
   end
 
   def update
+    binding.pry
     @setlist = Setlist.find(params[:id])
     suggested_songs = []
     params[:setlist_songs].each { |setlist_song_id| suggested_songs << SetlistSong.find_by(id: setlist_song_id)}

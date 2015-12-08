@@ -12,6 +12,12 @@ class SongsController < ApplicationController
     redirect_to setlist_path(id: params[:setlist_id])
   end
 
+  def destroy
+    Song.destroy(params[:id])
+    SetlistSong.destroy(params[:setlist_song_id])
+    redirect_to home_path
+  end
+
 private
 
   def song_params
