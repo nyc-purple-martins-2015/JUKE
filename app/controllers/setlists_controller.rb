@@ -83,6 +83,7 @@ class SetlistsController < ApplicationController
   end
 
   def destroy
+    GuestSetlist.destroy_all(setlist_id: params[:id])
     Setlist.destroy(params[:id])
     redirect_to user_path(current_user.id)
   end
