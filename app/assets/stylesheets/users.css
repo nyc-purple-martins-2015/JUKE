@@ -1,3 +1,14 @@
+.link_to_player_page {
+  /*Lawson - want to change class name*/
+  position: absolute;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff2d95, 0 0 30px #ff2d95, 0 0 40px #ff2d95, 0 0 50px #ff2d95, 0 0 75px #ff2d95;
+  letter-spacing: 5px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 1em;
+  left: 2em;
+  top: 1em;
+}
+
 .showpage_users_container h3 {
   left: .5em;
   text-align: center;
