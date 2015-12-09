@@ -24,7 +24,7 @@
 .current_list_container {
   position: relative;
   top: -4em;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   display: none;
   left: 20%;
   margin-left: 15%;
@@ -53,7 +53,7 @@
 .suggested_songs_container {
   position: relative;
   top: -4em;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   left: 35%;
   display: none;
   margin-right: 15%;
@@ -100,13 +100,13 @@
 }
 
 .song_name {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   font-size: 2em
 }
 
 .song_details {
   font-size: 1.5em;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
 }
 
 .artist_name {
@@ -125,7 +125,7 @@
   text-align: center;
   font-size: 1em;
   position: relative;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   margin: 0 auto;
   left: 3em;
   top: 3em;
@@ -187,7 +187,7 @@
 }
 
 .invite_form textarea {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   position: relative;
   font-size: .5em;
   background: transparent;

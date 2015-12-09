@@ -9,7 +9,7 @@
   font-size: 2em;
   position: relative;
   text-align: center;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
 }
 
 .login_page a:visited{
@@ -22,7 +22,7 @@
   font-size: 2em;
   position: relative;
   text-align: center;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
 }
 
 .guest_login {

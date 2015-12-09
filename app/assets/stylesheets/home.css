@@ -39,7 +39,7 @@
   text-align: center;
   font-size: 2em;
   position: relative;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   margin: 0 auto;
   right: 3em;
   top: 1em;
@@ -70,7 +70,7 @@
 input[type=submit] {
   position: relative;
     font-size: 1em;
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Helvetica', cursive;
     padding: 5px 15px;
     background: transparent;
     border: 0 none;
