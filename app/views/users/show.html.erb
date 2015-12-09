@@ -1,7 +1,8 @@
-<div class="showpage_users_container">
-  <div class="link_to_player_page">
+<div class="link_to_delete_page">
     <%= link_to "Delete Your Account", edit_user_path(@user)%>
-  </div>
+</div>
+
+<div class="showpage_users_container">
   <div class="my_jukes_on_show_page">
     <% if !@user.setlists.empty? %>
     <h3>My Jukes</h3>
