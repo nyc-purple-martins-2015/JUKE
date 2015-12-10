@@ -16,6 +16,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    render "edit", layout: false
+  end
+
+  def destroy
+    User.destroy_all(id: current_user.id)
+    redirect_to root_path
+  end
+
   private
     def user_params
       params.require(:user).permit(:username, :email, :password)

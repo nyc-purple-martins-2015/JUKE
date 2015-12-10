@@ -1,0 +1,7 @@
+<div class="delete_confirmation_page">
+  <h3>Confirm <%= current_user.username %>'s account deletion?</h3>
+  <ul>
+    <li><%= link_to "Yes", user_path(current_user), method: :delete %></li>
+    <li><%= link_to "Cancel", user_path(current_user) %></li>
+  </ul>
+</div>
