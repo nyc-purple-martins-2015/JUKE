@@ -58,7 +58,7 @@ body {
 #profile_dropdown {
   position: absolute;
   right: 0;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   width: 10em;
   z-index: 1;
   display: none;

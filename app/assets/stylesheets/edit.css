@@ -10,7 +10,7 @@
   width: 10em;
   border: 1px black solid;
   border-radius: 10px;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   font-size: 2em;
 }
 
@@ -37,7 +37,7 @@
   text-align: center;
   top: 1em;
   left: 40%;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   font-size: 1.5em;
 }
 
@@ -132,7 +132,7 @@ position: relative;
 #invite_code {
   position: relative;
   text-align: center;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Helvetica', cursive;
   font-size: 1.5em;
 }
 
